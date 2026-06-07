@@ -1,0 +1,112 @@
+{
+  "images": [
+    {
+      "id": "hero-main",
+      "section": "Hero",
+      "label": "Hero — Main Image",
+      "src": "images/hero-main.jpg",
+      "alt": "A colorful handmade pipe cleaner flower bouquet in a pink vase",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "hero-small",
+      "section": "Hero",
+      "label": "Hero — Circle Accent",
+      "src": "images/hero-small.jpg",
+      "alt": "A cheerful pipe cleaner dancing flower with a smiley face",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "cat-wild-flowers",
+      "section": "Collection",
+      "label": "Wild Flowers",
+      "src": "images/cat-wild-flowers.jpg",
+      "alt": "Wild Flowers — handmade pipe cleaner craft by Florela",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "cat-keychains",
+      "section": "Collection",
+      "label": "Keychains",
+      "src": "images/cat-keychains.jpg",
+      "alt": "Keychains — handmade pipe cleaner craft by Florela",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "cat-dancing-flowers",
+      "section": "Collection",
+      "label": "Dancing Flowers",
+      "src": "images/cat-dancing-flowers.jpg",
+      "alt": "Dancing Flowers — handmade pipe cleaner craft by Florela",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "cat-bouquets",
+      "section": "Collection",
+      "label": "Bouquets",
+      "src": "images/cat-bouquets.jpg",
+      "alt": "Bouquets — handmade pipe cleaner craft by Florela",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "cat-dreamy-lamps",
+      "section": "Collection",
+      "label": "Dreamy Lamps",
+      "src": "images/cat-dreamy-lamps.jpg",
+      "alt": "Dreamy Lamps — handmade pipe cleaner craft by Florela",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "cat-bag-charms",
+      "section": "Collection",
+      "label": "Bag Charms",
+      "src": "images/cat-bag-charms.jpg",
+      "alt": "Bag Charms — handmade pipe cleaner craft by Florela",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "cat-curtain-holders",
+      "section": "Collection",
+      "label": "Curtain Holders",
+      "src": "images/cat-curtain-holders.jpg",
+      "alt": "Curtain Holders — handmade pipe cleaner craft by Florela",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "cat-bento-box",
+      "section": "Collection",
+      "label": "Bento Box",
+      "src": "images/cat-bento-box.jpg",
+      "alt": "Bento Box — handmade pipe cleaner craft by Florela",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "story-main",
+      "section": "Our Story",
+      "label": "Story — Process Image",
+      "src": "images/story-main.jpg",
+      "alt": "Hands twisting a pink pipe cleaner into a flower petal",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "id": "about-main",
+      "section": "About",
+      "label": "About — Studio Image",
+      "src": "images/about-main.jpg",
+      "alt": "Hands twisting colorful pipe cleaners into a flower on a wooden craft table",
+      "width": 1024,
+      "height": 1024
+    }
+  ]
+}
