@@ -276,7 +276,7 @@ footer .copy { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
     <div class="nav-links" id="nav-links">
-      <a href="index.html#collection">Shop</a>
+      <a href="category.html?cat=bouquets">Catalogue</a>
       <a href="index.html#about">About</a>
       <a href="index.html#story">Our Story</a>
       <a href="#" id="nav-order-btn" class="btn-primary">Order Now</a>
@@ -296,24 +296,6 @@ footer .copy { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0
   </div>
 </div>
 
-<section class="cat-hero">
-  <div class="container">
-    <div class="cat-hero-grid">
-      <div class="cat-hero-text animate-in">
-        <div class="cat-hero-badge" id="cat-badge">The Craft Collection</div>
-        <h1 class="text-balance" id="cat-title"></h1>
-        <p class="subtitle text-pretty" id="cat-subtitle"></p>
-        <p class="cat-count" id="cat-count"></p>
-      </div>
-      <div class="cat-hero-image animate-in animate-in-delay-1">
-        <div class="cat-hero-img-wrap">
-          <img id="cat-hero-img" src="" alt="" width="640" height="640">
-        </div>
-        <div class="cat-hero-sticker" id="cat-sticker">Handmade ✿</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- Category tabs -->
 <section class="products-section">
@@ -441,17 +423,6 @@ function renderPage(c, category) {
   // ── Breadcrumb
   document.getElementById('breadcrumb-cat').textContent = category.name;
 
-  // ── Category Hero
-  document.getElementById('cat-title').textContent = category.name;
-  document.getElementById('cat-subtitle').textContent = category.subtitle;
-  document.getElementById('cat-count').textContent = products.length > 0
-    ? `${products.length} product${products.length !== 1 ? 's' : ''} available`
-    : '';
-
-  const catImgSrc = getImageSrc(c, category.imageId);
-  const catImgAlt = getImageAlt(c, category.imageId);
-  document.getElementById('cat-hero-img').src = catImgSrc;
-  document.getElementById('cat-hero-img').alt = catImgAlt;
 
   // ── Category tabs (switch between categories)
   let tabsHtml = '';
