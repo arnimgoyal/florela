@@ -1,9 +1,208 @@
 {
+  "siteSettings": {
+    "brandName": "Florela",
+    "tagline": "Handcrafted pipe cleaner art for whimsical souls.",
+    "metaTitle": "Florela \u2014 Hand-twisted Pipe Cleaner Flowers & Craft",
+    "metaDescription": "Florela makes joyful, handmade pipe cleaner flowers, bouquets, keychains, dancing flowers, lamps, bag charms, curtain holders and bento boxes. Order via WhatsApp or Instagram.",
+    "instagramHandle": "florela.ever",
+    "instagramUrl": "https://www.instagram.com/florela.ever",
+    "whatsappNumber": "9521330178",
+    "whatsappMessage": "Hi Florela! I'd love to order one of your pipe cleaner creations \ud83c\udf38",
+    "copyrightText": "\u00a9 2026 Florela \u00b7 Made with fuzzy love"
+  },
+  "heroSection": {
+    "badge": "Hand-twisted joy \u00b7 Made to order",
+    "titlePart1": "Hand-twisted fuzzy ",
+    "titleHighlight": "wonders",
+    "titlePart2": " for your world",
+    "subtitle": "Soft, tactile pipe cleaner creations that never wilt. From dancing sunflowers to bento box surprises \u2014 every piece is twisted by hand, just for you.",
+    "stickerText": "100% handmade \u273f"
+  },
+  "storySection": {
+    "badge": "Our Story",
+    "title": "Twisted by hand, loved forever.",
+    "paragraphs": [
+      "Every piece at Florela starts as a simple, fuzzy wire. With careful twists and a sprinkle of imagination, we transform them into vibrant petals, whimsical creatures, and tiny everyday joys.",
+      "We believe craft should be tactile. There's something magical about a velvet-soft petal that never wilts \u2014 a little reminder that joy can be made by hand."
+    ],
+    "linkText": "Watch the process on Instagram \u2192",
+    "sticker1": "No two alike \u273f",
+    "sticker2": "Made to order"
+  },
+  "aboutSection": {
+    "badge": "About Us",
+    "title": "Hi, I am florela.",
+    "subtitle": "A tiny studio with very twisty fingers and a soft spot for colour.",
+    "paragraphs": [
+      "Florela started with one yellow daisy made for my mom on a quiet Sunday. She kept it on her desk for months, so I made another. And another. Suddenly friends were asking for bouquets, then keychains, then little lamps for their study tables.",
+      "Every piece you see here is twisted by hand, one petal at a time, from soft fuzzy pipe cleaners. No factories, no machines \u2014 just slow, careful, very colourful work.",
+      "The best part? These flowers don't wilt. They sit on shelves, dangle from bags, light up bedrooms and quietly remind you that someone made this just for you."
+    ],
+    "linkText": "See more on Instagram \u2192",
+    "sticker1": "Twisty fingers \u273f",
+    "sticker2": "Made with love"
+  },
+  "ctaSection": {
+    "title": "Ready for a blooming gift?",
+    "subtitle": "Message us to customize your own pipe cleaner bouquet, charm, or surprise.",
+    "whatsappBtnText": "Message on WhatsApp",
+    "instagramBtnText": "DM on Instagram"
+  },
+  "orderSteps": [
+    {
+      "step": "01",
+      "title": "Pick a piece",
+      "description": "Browse the collection above or share your dream creation with us.",
+      "bgColor": "rgba(254,205,211,0.3)"
+    },
+    {
+      "step": "02",
+      "title": "DM or WhatsApp",
+      "description": "Message us on Instagram @florela.ever or ping us on WhatsApp.",
+      "bgColor": "rgba(254,243,199,0.4)"
+    },
+    {
+      "step": "03",
+      "title": "We twist & ship",
+      "description": "We handcraft your order, share a sneak peek, and send it to your door.",
+      "bgColor": "rgba(236,252,203,0.4)"
+    }
+  ],
+  "collectionSection": {
+    "label": "The Wondershop",
+    "title": "The Craft Collection",
+    "description": "Eight little worlds twisted from fuzzy wire. Pick a category, message us, and we'll twist one just for you."
+  },
+  "orderSectionHeader": {
+    "title": "Ordering is sweet & simple",
+    "description": "No carts, no checkouts. Just a friendly chat \u2014 pick what you love and we'll twist it for you."
+  },
+  "categories": [
+    {
+      "id": "bouquets",
+      "name": "The Florela Classic",
+      "subtitle": "Classics",
+      "imageId": "cat-bouquets",
+      "bgColor": "#ecfccb",
+      "active": true,
+      "sortOrder": 1
+    },
+    {
+      "id": "flowers",
+      "name": "Flowers",
+      "subtitle": "Single fuzzy stems",
+      "imageId": "cat-wild-flowers",
+      "bgColor": "#fce7f3",
+      "active": false,
+      "sortOrder": 2
+    },
+    {
+      "id": "desk-decor",
+      "name": "Desk Decor",
+      "subtitle": "Wiggly desk friends",
+      "imageId": "cat-dancing-flowers",
+      "bgColor": "#ede9fe",
+      "active": true,
+      "sortOrder": 3
+    },
+    {
+      "id": "keychains",
+      "name": "Keychains",
+      "subtitle": "Fuzzy companions",
+      "imageId": "cat-keychains",
+      "bgColor": "#fef3c7",
+      "active": true,
+      "sortOrder": 4
+    },
+    {
+      "id": "dancing-flowers",
+      "name": "Dancing Flowers",
+      "subtitle": "Wiggly desk friends",
+      "imageId": "cat-dancing-flowers",
+      "bgColor": "#ede9fe",
+      "active": false,
+      "sortOrder": 5
+    },
+    {
+      "id": "dreamy-lamps",
+      "name": "Dreamy Lamps",
+      "subtitle": "Mood lighting, fuzzed",
+      "imageId": "cat-dreamy-lamps",
+      "bgColor": "#fef3c7",
+      "active": false,
+      "sortOrder": 6
+    },
+    {
+      "id": "bag-charms",
+      "name": "Bag Charms",
+      "subtitle": "Carry a little joy",
+      "imageId": "cat-bag-charms",
+      "bgColor": "#ecfccb",
+      "active": false,
+      "sortOrder": 7
+    },
+    {
+      "id": "curtain-holders",
+      "name": "Curtain Holders",
+      "subtitle": "Home, but happier",
+      "imageId": "cat-curtain-holders",
+      "bgColor": "#ede9fe",
+      "active": false,
+      "sortOrder": 8
+    },
+    {
+      "id": "bento-box",
+      "name": "Bento Box",
+      "subtitle": "Miniature surprises",
+      "imageId": "cat-bento-box",
+      "bgColor": "#fce7f3",
+      "active": false,
+      "sortOrder": 9
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-001",
+      "categoryId": "bouquets",
+      "name": "Sunset Rose Bouquet",
+      "description": "A warm-toned bouquet with hand-twisted roses in shades of peach, coral, and soft yellow. Perfect for gifting or home d\u00e9cor.",
+      "image": "images/cat-bouquets.jpg",
+      "imageAlt": "Sunset Rose Bouquet \u2014 handmade pipe cleaner flowers by Florela",
+      "active": false
+    },
+    {
+      "id": "prod-002",
+      "categoryId": "flowers",
+      "name": "Lavender Daisy Stem",
+      "description": "A single fuzzy daisy stem in soft lavender with a cheerful yellow center. Never wilts, always brightens your day.",
+      "image": "images/cat-wild-flowers.jpg",
+      "imageAlt": "Lavender Daisy Stem \u2014 handmade pipe cleaner flower by Florela",
+      "active": false
+    },
+    {
+      "id": "prod-003",
+      "categoryId": "desk-decor",
+      "name": "Dancing Sunflower",
+      "description": "A wiggly, cheerful sunflower that sits on your desk and sways with a gentle tap. The ultimate desk companion.",
+      "image": "images/cat-dancing-flowers.jpg",
+      "imageAlt": "Dancing Sunflower \u2014 handmade pipe cleaner craft by Florela",
+      "active": false
+    },
+    {
+      "id": "prod-mqiashan",
+      "name": "The Rosabella Classic",
+      "description": "Rosabella- a part of our classic series\ud83c\udf39\nA handcrafted floral creation designed to capture the beauty of a blooming lily and the warmth of a heartfelt gift. Perfect for birthdays, anniversaries, surprises, room d\u00e9cor, or simply reminding someone they are loved",
+      "categoryId": "bouquets",
+      "imageAlt": "Rosabella classic",
+      "active": true,
+      "image": "images/20260615_184630.jpg"
+    }
+  ],
   "images": [
     {
       "id": "hero-main",
       "section": "Hero",
-      "label": "Hero — Main Image",
+      "label": "Hero \u2014 Main Image",
       "src": "images/hero-main.jpg",
       "alt": "A colorful handmade pipe cleaner flower bouquet in a pink vase",
       "width": 1024,
@@ -12,7 +211,7 @@
     {
       "id": "hero-small",
       "section": "Hero",
-      "label": "Hero — Circle Accent",
+      "label": "Hero \u2014 Circle Accent",
       "src": "images/hero-small.jpg",
       "alt": "A cheerful pipe cleaner dancing flower with a smiley face",
       "width": 1024,
@@ -23,7 +222,7 @@
       "section": "Collection",
       "label": "Wild Flowers",
       "src": "images/cat-wild-flowers.jpg",
-      "alt": "Wild Flowers — handmade pipe cleaner craft by Florela",
+      "alt": "Wild Flowers \u2014 handmade pipe cleaner craft by Florela",
       "width": 1024,
       "height": 1024
     },
@@ -32,7 +231,7 @@
       "section": "Collection",
       "label": "Keychains",
       "src": "images/cat-keychains.jpg",
-      "alt": "Keychains — handmade pipe cleaner craft by Florela",
+      "alt": "Keychains \u2014 handmade pipe cleaner craft by Florela",
       "width": 1024,
       "height": 1024
     },
@@ -41,7 +240,7 @@
       "section": "Collection",
       "label": "Dancing Flowers",
       "src": "images/cat-dancing-flowers.jpg",
-      "alt": "Dancing Flowers — handmade pipe cleaner craft by Florela",
+      "alt": "Dancing Flowers \u2014 handmade pipe cleaner craft by Florela",
       "width": 1024,
       "height": 1024
     },
@@ -50,7 +249,7 @@
       "section": "Collection",
       "label": "Bouquets",
       "src": "images/cat-bouquets.jpg",
-      "alt": "Bouquets — handmade pipe cleaner craft by Florela",
+      "alt": "Bouquets \u2014 handmade pipe cleaner craft by Florela",
       "width": 1024,
       "height": 1024
     },
@@ -59,7 +258,7 @@
       "section": "Collection",
       "label": "Dreamy Lamps",
       "src": "images/cat-dreamy-lamps.jpg",
-      "alt": "Dreamy Lamps — handmade pipe cleaner craft by Florela",
+      "alt": "Dreamy Lamps \u2014 handmade pipe cleaner craft by Florela",
       "width": 1024,
       "height": 1024
     },
@@ -68,7 +267,7 @@
       "section": "Collection",
       "label": "Bag Charms",
       "src": "images/cat-bag-charms.jpg",
-      "alt": "Bag Charms — handmade pipe cleaner craft by Florela",
+      "alt": "Bag Charms \u2014 handmade pipe cleaner craft by Florela",
       "width": 1024,
       "height": 1024
     },
@@ -77,7 +276,7 @@
       "section": "Collection",
       "label": "Curtain Holders",
       "src": "images/cat-curtain-holders.jpg",
-      "alt": "Curtain Holders — handmade pipe cleaner craft by Florela",
+      "alt": "Curtain Holders \u2014 handmade pipe cleaner craft by Florela",
       "width": 1024,
       "height": 1024
     },
@@ -86,14 +285,14 @@
       "section": "Collection",
       "label": "Bento Box",
       "src": "images/cat-bento-box.jpg",
-      "alt": "Bento Box — handmade pipe cleaner craft by Florela",
+      "alt": "Bento Box \u2014 handmade pipe cleaner craft by Florela",
       "width": 1024,
       "height": 1024
     },
     {
       "id": "story-main",
       "section": "Our Story",
-      "label": "Story — Process Image",
+      "label": "Story \u2014 Process Image",
       "src": "images/story-main.jpg",
       "alt": "Hands twisting a pink pipe cleaner into a flower petal",
       "width": 1024,
@@ -102,7 +301,7 @@
     {
       "id": "about-main",
       "section": "About",
-      "label": "About — Studio Image",
+      "label": "About \u2014 Studio Image",
       "src": "images/about-main.jpg",
       "alt": "Hands twisting colorful pipe cleaners into a flower on a wooden craft table",
       "width": 1024,

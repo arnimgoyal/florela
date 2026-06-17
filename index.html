@@ -33,8 +33,26 @@ nav { position: sticky; top: 0; z-index: 50; background: rgba(253,250,246,0.8); 
 .nav-links { display: flex; align-items: center; gap: 1.5rem; }
 .nav-links a { font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
 .nav-links a:hover { color: var(--rose-brand); }
+.nav-cat-link { position: relative; }
+.nav-cat-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--rose-brand); transition: width 0.3s ease; }
+.nav-cat-link:hover::after { width: 100%; }
 .btn-primary { display: inline-block; background: var(--rose-brand); color: #fff; font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 9999px; transition: transform 0.2s; }
 .btn-primary:hover { transform: scale(1.05); }
+
+/* Mobile nav toggle */
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; color: var(--ink); }
+@media(max-width: 768px) {
+  .nav-toggle { display: flex; align-items: center; }
+  .nav-links { 
+    display: none; 
+    position: absolute; top: 64px; left: 0; right: 0; 
+    background: rgba(253,250,246,0.98); backdrop-filter: blur(12px);
+    flex-direction: column; padding: 1.5rem; gap: 1rem; 
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+  .nav-links.open { display: flex; }
+}
 
 /* Hero */
 .hero { padding: 5rem 0; overflow: hidden; }
@@ -75,8 +93,8 @@ nav { position: sticky; top: 0; z-index: 50; background: rgba(253,250,246,0.8); 
 /* Collection */
 .collection { padding: 6rem 0; background: #fff; }
 .collection-header { text-align: center; margin-bottom: 4rem; }
-.collection-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-@media(min-width:768px) { .collection-grid { grid-template-columns: repeat(4, 1fr); } }
+.collection-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; width: 65%; margin: 0 auto; }
+@media(min-width:768px) { .collection-grid { grid-template-columns: repeat(3, 1fr); } }
 .cat-card { display: block; }
 .cat-card:nth-child(even) { margin-top: 0; }
 @media(min-width:768px) { .cat-card:nth-child(even) { margin-top: 2.5rem; } }
@@ -149,7 +167,7 @@ nav { position: sticky; top: 0; z-index: 50; background: rgba(253,250,246,0.8); 
 footer { padding: 3rem 0; border-top: 1px solid rgba(0,0,0,0.05); text-align: center; }
 footer .logo { font-family: 'Young Serif', serif; font-size: 1.875rem; color: var(--rose-brand); margin-bottom: 1rem; }
 footer .tagline { font-size: 0.875rem; color: #6b7280; font-style: italic; margin-bottom: 1.5rem; }
-footer .links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; }
+footer .links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
 footer .links a { font-size: 0.875rem; font-weight: 600; transition: color 0.2s; }
 footer .links a:hover { color: var(--rose-brand); }
 footer .copy { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.3em; color: #6b7280; }
@@ -163,18 +181,26 @@ footer .copy { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0
 .text-center { text-align: center; }
 .text-balance { text-wrap: balance; }
 .text-pretty { text-wrap: pretty; }
+
+/* Loading skeleton */
+.skeleton { background: linear-gradient(90deg, rgba(0,0,0,0.04) 25%, rgba(0,0,0,0.08) 50%, rgba(0,0,0,0.04) 75%); background-size: 200% 100%; animation: skeleton-shimmer 1.5s ease-in-out infinite; border-radius: 12px; }
+@keyframes skeleton-shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 </style>
 </head>
 <body>
 
+<!-- Skeleton placeholders while config loads -->
 <nav>
   <div class="container nav-inner">
-    <a href="#top" class="nav-logo">Florela</a>
-    <div class="nav-links">
+    <a href="#top" class="nav-logo" id="nav-logo">Florela</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" onclick="document.getElementById('nav-links').classList.toggle('open')">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-links" id="nav-links">
       <a href="#collection">Shop</a>
       <a href="#about">About</a>
       <a href="#story">Our Story</a>
-      <a href="https://www.instagram.com/florela.ever" target="_blank" rel="noopener noreferrer" class="btn-primary">Order Now</a>
+      <a href="#" id="nav-order-btn" class="btn-primary">Order Now</a>
     </div>
   </div>
 </nav>
@@ -182,127 +208,41 @@ footer .copy { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0
 <header id="top" class="hero">
   <div class="container hero-grid">
     <div style="max-width:48ch;">
-      <span class="hero-badge">Hand-twisted joy · Made to order</span>
-      <h1 class="text-balance">Hand-twisted fuzzy <span style="color:var(--rose-brand);font-style:italic;text-decoration:underline;text-decoration-style:wavy;text-decoration-color:var(--petal);text-underline-offset:4px;">wonders</span> for your world</h1>
-      <p class="text-pretty">Soft, tactile pipe cleaner creations that never wilt. From dancing sunflowers to bento box surprises — every piece is twisted by hand, just for you.</p>
+      <span class="hero-badge" id="hero-badge"></span>
+      <h1 class="text-balance" id="hero-title"></h1>
+      <p class="text-pretty" id="hero-subtitle"></p>
       <div class="hero-btns">
-        <a href="https://wa.me/?text=Hi%20Florela!%20I%27d%20love%20to%20order%20one%20of%20your%20pipe%20cleaner%20creations%20%F0%9F%8C%B8" target="_blank" rel="noopener noreferrer" class="btn-wa">Order via WhatsApp</a>
-        <a href="https://www.instagram.com/florela.ever" target="_blank" rel="noopener noreferrer" class="btn-ig">Follow @florela.ever</a>
+        <a href="#" id="hero-wa-btn" target="_blank" rel="noopener noreferrer" class="btn-wa">Order via WhatsApp</a>
+        <a href="#" id="hero-ig-btn" target="_blank" rel="noopener noreferrer" class="btn-ig">Follow @florela.ever</a>
       </div>
     </div>
     <div class="hero-visual">
       <div class="hero-img-main">
-        <img src="images/hero-main.jpg" data-img-id="hero-main" alt="A colorful handmade pipe cleaner flower bouquet in a pink vase" width="896" height="1088">
+        <img id="img-hero-main" src="" alt="" width="896" height="1088">
       </div>
       <div class="hero-img-small">
-        <img src="images/hero-small.jpg" data-img-id="hero-small" alt="A cheerful pipe cleaner dancing flower with a smiley face" width="640" height="640" loading="lazy">
+        <img id="img-hero-small" src="" alt="" width="640" height="640" loading="lazy">
       </div>
-      <div class="hero-sticker">100% handmade ✿</div>
+      <div class="hero-sticker" id="hero-sticker"></div>
     </div>
   </div>
 </header>
 
 <div class="marquee">
-  <div class="marquee-inner">
-    <span>Bag Charms<span style="color:var(--rose-brand);">✿</span></span>
-    <span>Bento Boxes<span style="color:var(--rose-brand);">✿</span></span>
-    <span>Curtain Holders<span style="color:var(--rose-brand);">✿</span></span>
-    <span>Lamps<span style="color:var(--rose-brand);">✿</span></span>
-    <span>Dancing Flowers<span style="color:var(--rose-brand);">✿</span></span>
-    <span>Bouquets<span style="color:var(--rose-brand);">✿</span></span>
-    <span>Keychains<span style="color:var(--rose-brand);">✿</span></span>
-    <span>Wild Flowers<span style="color:var(--rose-brand);">✿</span></span>
-    <span>Bag Charms<span style="color:var(--rose-brand);">✿</span></span>
-    <span>Bento Boxes<span style="color:var(--rose-brand);">✿</span></span>
-    <span>Curtain Holders<span style="color:var(--rose-brand);">✿</span></span>
-    <span>Lamps<span style="color:var(--rose-brand);">✿</span></span>
-    <span>Dancing Flowers<span style="color:var(--rose-brand);">✿</span></span>
-    <span>Bouquets<span style="color:var(--rose-brand);">✿</span></span>
-    <span>Keychains<span style="color:var(--rose-brand);">✿</span></span>
-    <span>Wild Flowers<span style="color:var(--rose-brand);">✿</span></span>
+  <div class="marquee-inner" id="marquee-inner">
+    <!-- Filled by JS -->
   </div>
 </div>
 
 <section id="collection" class="collection">
   <div class="container">
     <div class="collection-header">
-      <span class="section-label">The Wondershop</span>
-      <h2 class="section-title text-balance">The Craft Collection</h2>
-      <p class="section-desc text-pretty">Eight little worlds twisted from fuzzy wire. Pick a category, message us, and we'll twist one just for you.</p>
+      <span class="section-label" id="collection-label"></span>
+      <h2 class="section-title text-balance" id="collection-title"></h2>
+      <p class="section-desc text-pretty" id="collection-desc"></p>
     </div>
-    <div class="collection-grid">
-      <a href="https://www.instagram.com/florela.ever" target="_blank" rel="noopener noreferrer" class="cat-card">
-        <div class="cat-img-wrap" style="background:#fce7f3;">
-          <div class="cat-img-inner">
-            <img src="images/cat-wild-flowers.jpg" data-img-id="cat-wild-flowers" alt="Wild Flowers — handmade pipe cleaner craft by Florela" width="640" height="640" loading="lazy">
-          </div>
-        </div>
-        <h3 class="cat-name">Wild Flowers</h3>
-        <p class="cat-sub">Single fuzzy stems</p>
-      </a>
-      <a href="https://www.instagram.com/florela.ever" target="_blank" rel="noopener noreferrer" class="cat-card" style="margin-top:2.5rem;">
-        <div class="cat-img-wrap" style="background:#fef3c7;">
-          <div class="cat-img-inner">
-            <img src="images/cat-keychains.jpg" data-img-id="cat-keychains" alt="Keychains — handmade pipe cleaner craft by Florela" width="640" height="640" loading="lazy">
-          </div>
-        </div>
-        <h3 class="cat-name">Keychains</h3>
-        <p class="cat-sub">Fuzzy companions</p>
-      </a>
-      <a href="https://www.instagram.com/florela.ever" target="_blank" rel="noopener noreferrer" class="cat-card">
-        <div class="cat-img-wrap" style="background:#ede9fe;">
-          <div class="cat-img-inner">
-            <img src="images/cat-dancing-flowers.jpg" data-img-id="cat-dancing-flowers" alt="Dancing Flowers — handmade pipe cleaner craft by Florela" width="640" height="640" loading="lazy">
-          </div>
-        </div>
-        <h3 class="cat-name">Dancing Flowers</h3>
-        <p class="cat-sub">Wiggly desk friends</p>
-      </a>
-      <a href="https://www.instagram.com/florela.ever" target="_blank" rel="noopener noreferrer" class="cat-card" style="margin-top:2.5rem;">
-        <div class="cat-img-wrap" style="background:#ecfccb;">
-          <div class="cat-img-inner">
-            <img src="images/cat-bouquets.jpg" data-img-id="cat-bouquets" alt="Bouquets — handmade pipe cleaner craft by Florela" width="640" height="640" loading="lazy">
-          </div>
-        </div>
-        <h3 class="cat-name">Bouquets</h3>
-        <p class="cat-sub">Forever blooms</p>
-      </a>
-      <a href="https://www.instagram.com/florela.ever" target="_blank" rel="noopener noreferrer" class="cat-card">
-        <div class="cat-img-wrap" style="background:#fef3c7;">
-          <div class="cat-img-inner">
-            <img src="images/cat-dreamy-lamps.jpg" data-img-id="cat-dreamy-lamps" alt="Dreamy Lamps — handmade pipe cleaner craft by Florela" width="640" height="640" loading="lazy">
-          </div>
-        </div>
-        <h3 class="cat-name">Dreamy Lamps</h3>
-        <p class="cat-sub">Mood lighting, fuzzed</p>
-      </a>
-      <a href="https://www.instagram.com/florela.ever" target="_blank" rel="noopener noreferrer" class="cat-card" style="margin-top:2.5rem;">
-        <div class="cat-img-wrap" style="background:#ecfccb;">
-          <div class="cat-img-inner">
-            <img src="images/cat-bag-charms.jpg" data-img-id="cat-bag-charms" alt="Bag Charms — handmade pipe cleaner craft by Florela" width="640" height="640" loading="lazy">
-          </div>
-        </div>
-        <h3 class="cat-name">Bag Charms</h3>
-        <p class="cat-sub">Carry a little joy</p>
-      </a>
-      <a href="https://www.instagram.com/florela.ever" target="_blank" rel="noopener noreferrer" class="cat-card">
-        <div class="cat-img-wrap" style="background:#ede9fe;">
-          <div class="cat-img-inner">
-            <img src="images/cat-curtain-holders.jpg" data-img-id="cat-curtain-holders" alt="Curtain Holders — handmade pipe cleaner craft by Florela" width="640" height="640" loading="lazy">
-          </div>
-        </div>
-        <h3 class="cat-name">Curtain Holders</h3>
-        <p class="cat-sub">Home, but happier</p>
-      </a>
-      <a href="https://www.instagram.com/florela.ever" target="_blank" rel="noopener noreferrer" class="cat-card" style="margin-top:2.5rem;">
-        <div class="cat-img-wrap" style="background:#fce7f3;">
-          <div class="cat-img-inner">
-            <img src="images/cat-bento-box.jpg" data-img-id="cat-bento-box" alt="Bento Box — handmade pipe cleaner craft by Florela" width="640" height="640" loading="lazy">
-          </div>
-        </div>
-        <h3 class="cat-name">Bento Box</h3>
-        <p class="cat-sub">Miniature surprises</p>
-      </a>
+    <div class="collection-grid" id="collection-grid">
+      <!-- Filled by JS -->
     </div>
   </div>
 </section>
@@ -311,18 +251,17 @@ footer .copy { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0
   <div class="container">
     <div class="story-card">
       <div class="story-text">
-        <span class="story-badge">Our Story</span>
-        <h2 class="text-balance">Twisted by hand, loved forever.</h2>
-        <p class="text-pretty">Every piece at Florela starts as a simple, fuzzy wire. With careful twists and a sprinkle of imagination, we transform them into vibrant petals, whimsical creatures, and tiny everyday joys.</p>
-        <p class="text-pretty">We believe craft should be tactile. There's something magical about a velvet-soft petal that never wilts — a little reminder that joy can be made by hand.</p>
-        <a href="https://www.instagram.com/florela.ever" target="_blank" rel="noopener noreferrer" class="story-link">Watch the process on Instagram →</a>
+        <span class="story-badge" id="story-badge"></span>
+        <h2 class="text-balance" id="story-title"></h2>
+        <div id="story-paragraphs"></div>
+        <a href="#" id="story-link" target="_blank" rel="noopener noreferrer" class="story-link"></a>
       </div>
       <div class="story-visual">
         <div class="story-img">
-          <img src="images/story-main.jpg" data-img-id="story-main" alt="Hands twisting a pink pipe cleaner into a flower petal" width="896" height="896" loading="lazy">
+          <img id="img-story-main" src="" alt="" width="896" height="896" loading="lazy">
         </div>
-        <div class="sticker" style="top:-1rem;right:-1rem;background:var(--sunny);transform:rotate(12deg);">No two alike ✿</div>
-        <div class="sticker" style="bottom:-1rem;left:-1rem;background:var(--lilac);transform:rotate(-6deg);">Made to order</div>
+        <div class="sticker" id="story-sticker1" style="top:-1rem;right:-1rem;background:var(--sunny);transform:rotate(12deg);"></div>
+        <div class="sticker" id="story-sticker2" style="bottom:-1rem;left:-1rem;background:var(--lilac);transform:rotate(-6deg);"></div>
       </div>
     </div>
   </div>
@@ -333,19 +272,17 @@ footer .copy { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0
     <div class="about-grid">
       <div class="about-visual">
         <div class="about-img">
-          <img src="images/about-main.jpg" data-img-id="about-main" alt="Hands twisting colorful pipe cleaners into a flower on a wooden craft table" width="1024" height="1024" loading="lazy">
+          <img id="img-about-main" src="" alt="" width="1024" height="1024" loading="lazy">
         </div>
-        <div class="sticker" style="top:-0.75rem;right:-0.75rem;background:var(--sunny);transform:rotate(6deg);">Twisty fingers ✿</div>
-        <div class="sticker" style="bottom:-0.75rem;left:-0.75rem;background:var(--lilac);transform:rotate(-3deg);">Made with love</div>
+        <div class="sticker" id="about-sticker1" style="top:-0.75rem;right:-0.75rem;background:var(--sunny);transform:rotate(6deg);"></div>
+        <div class="sticker" id="about-sticker2" style="bottom:-0.75rem;left:-0.75rem;background:var(--lilac);transform:rotate(-3deg);"></div>
       </div>
       <div class="about-text">
-        <span class="about-badge">About Us</span>
-        <h2 class="text-balance">Hi, I am florela.</h2>
-        <p class="about-sub">A tiny studio with very twisty fingers and a soft spot for colour.</p>
-        <p class="text-pretty">Florela started with one yellow daisy made for my mom on a quiet Sunday. She kept it on her desk for months, so I made another. And another. Suddenly friends were asking for bouquets, then keychains, then little lamps for their study tables.</p>
-        <p class="text-pretty">Every piece you see here is twisted by hand, one petal at a time, from soft fuzzy pipe cleaners. No factories, no machines — just slow, careful, very colourful work.</p>
-        <p class="text-pretty">The best part? These flowers don't wilt. They sit on shelves, dangle from bags, light up bedrooms and quietly remind you that someone made this just for you.</p>
-        <a href="https://www.instagram.com/florela.ever" target="_blank" rel="noopener noreferrer" class="story-link">See more on Instagram →</a>
+        <span class="about-badge" id="about-badge"></span>
+        <h2 class="text-balance" id="about-title"></h2>
+        <p class="about-sub" id="about-subtitle"></p>
+        <div id="about-paragraphs"></div>
+        <a href="#" id="about-link" target="_blank" rel="noopener noreferrer" class="story-link"></a>
       </div>
     </div>
   </div>
@@ -354,25 +291,11 @@ footer .copy { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0
 <section id="order" class="order">
   <div class="container">
     <div class="order-header">
-      <h2 class="section-title">Ordering is sweet &amp; simple</h2>
-      <p class="section-desc">No carts, no checkouts. Just a friendly chat — pick what you love and we'll twist it for you.</p>
+      <h2 class="section-title" id="order-title"></h2>
+      <p class="section-desc" id="order-desc"></p>
     </div>
-    <div class="order-grid">
-      <div class="order-card" style="background:rgba(254,205,211,0.3);">
-        <div class="order-step">01</div>
-        <h3>Pick a piece</h3>
-        <p>Browse the collection above or share your dream creation with us.</p>
-      </div>
-      <div class="order-card" style="background:rgba(254,243,199,0.4);">
-        <div class="order-step">02</div>
-        <h3>DM or WhatsApp</h3>
-        <p>Message us on Instagram @florela.ever or ping us on WhatsApp.</p>
-      </div>
-      <div class="order-card" style="background:rgba(236,252,203,0.4);">
-        <div class="order-step">03</div>
-        <h3>We twist &amp; ship</h3>
-        <p>We handcraft your order, share a sneak peek, and send it to your door.</p>
-      </div>
+    <div class="order-grid" id="order-grid">
+      <!-- Filled by JS -->
     </div>
   </div>
 </section>
@@ -381,11 +304,11 @@ footer .copy { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0
   <div class="container" style="max-width:896px;">
     <div class="cta-box">
       <div style="position:relative;z-index:1;">
-        <h2 class="text-balance">Ready for a blooming gift?</h2>
-        <p>Message us to customize your own pipe cleaner bouquet, charm, or surprise.</p>
+        <h2 class="text-balance" id="cta-title"></h2>
+        <p id="cta-subtitle"></p>
         <div class="cta-btns">
-          <a href="https://wa.me/?text=Hi%20Florela!%20I%27d%20love%20to%20order%20one%20of%20your%20pipe%20cleaner%20creations%20%F0%9F%8C%B8" target="_blank" rel="noopener noreferrer" class="btn-light">Message on WhatsApp</a>
-          <a href="https://www.instagram.com/florela.ever" target="_blank" rel="noopener noreferrer" class="btn-outline">DM on Instagram</a>
+          <a href="#" id="cta-wa-btn" target="_blank" rel="noopener noreferrer" class="btn-light"></a>
+          <a href="#" id="cta-ig-btn" target="_blank" rel="noopener noreferrer" class="btn-outline"></a>
         </div>
       </div>
       <div class="cta-deco" style="top:0;left:0;width:18rem;height:18rem;background:rgba(255,255,255,0.1);transform:translate(-50%,-50%);"></div>
@@ -396,25 +319,252 @@ footer .copy { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0
 
 <footer>
   <div class="container">
-    <p class="logo">Florela</p>
-    <p class="tagline">Handcrafted pipe cleaner art for whimsical souls.</p>
-    <div class="links">
-      <a href="https://www.instagram.com/florela.ever" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <a href="https://wa.me/?text=Hi%20Florela!%20I%27d%20love%20to%20order%20one%20of%20your%20pipe%20cleaner%20creations%20%F0%9F%8C%B8" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-      <a href="#collection">Catalog</a>
+    <p class="logo" id="footer-logo"></p>
+    <p class="tagline" id="footer-tagline"></p>
+    <div class="links" id="footer-links">
+      <!-- Filled by JS -->
     </div>
-    <p class="copy">© 2026 Florela · Made with fuzzy love</p>
+    <p class="copy" id="footer-copy"></p>
   </div>
 </footer>
 
 <div class="float-btns">
-  <a href="https://wa.me/?text=Hi%20Florela!%20I%27d%20love%20to%20order%20one%20of%20your%20pipe%20cleaner%20creations%20%F0%9F%8C%B8" target="_blank" rel="noopener noreferrer" aria-label="Order via WhatsApp" class="float-btn" style="background:var(--whatsapp);">
+  <a href="#" id="float-wa" target="_blank" rel="noopener noreferrer" aria-label="Order via WhatsApp" class="float-btn" style="background:var(--whatsapp);">
     <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l.39.62-1.002 3.654 3.756-.985.835.45zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.297-.495.099-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01a1.09 1.09 0 0 0-.79.371c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
   </a>
-  <a href="https://www.instagram.com/florela.ever" target="_blank" rel="noopener noreferrer" aria-label="DM on Instagram" class="float-btn" style="background:linear-gradient(45deg,#f9ce34,#ee2a7b 50%,#6228d7);">
+  <a href="#" id="float-ig" target="_blank" rel="noopener noreferrer" aria-label="DM on Instagram" class="float-btn" style="background:linear-gradient(45deg,#f9ce34,#ee2a7b 50%,#6228d7);">
     <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
   </a>
 </div>
+
+<script>
+// ════════════════════════════════════════════
+// CONFIG LOADER
+// ════════════════════════════════════════════
+const STORAGE_KEY = 'florela_admin_overrides';
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str || '';
+  return div.innerHTML;
+}
+
+function getImageSrc(config, imageId) {
+  const img = config.images.find(i => i.id === imageId);
+  return img ? img.src : '';
+}
+
+function getImageAlt(config, imageId) {
+  const img = config.images.find(i => i.id === imageId);
+  return img ? img.alt : '';
+}
+
+function getWhatsAppUrl(config) {
+  const msg = encodeURIComponent(config.siteSettings.whatsappMessage || '');
+  const num = config.siteSettings.whatsappNumber || '';
+  return `https://wa.me/${num}?text=${msg}`;
+}
+
+function loadOverrides(config) {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (!saved) return config;
+    const overrides = JSON.parse(saved);
+
+    // Apply image overrides
+    if (overrides.images) {
+      config.images.forEach(img => {
+        if (overrides.images[img.id]) {
+          if (overrides.images[img.id].src) img.src = overrides.images[img.id].src;
+          if (overrides.images[img.id].alt !== undefined) img.alt = overrides.images[img.id].alt;
+        }
+      });
+    }
+
+    // Apply category overrides
+    if (overrides.categories) {
+      config.categories = overrides.categories;
+    }
+
+    // Apply products overrides
+    if (overrides.products) {
+      config.products = overrides.products;
+    }
+
+    // Apply site settings overrides
+    if (overrides.siteSettings) {
+      Object.assign(config.siteSettings, overrides.siteSettings);
+    }
+
+    // Apply section overrides
+    ['heroSection', 'storySection', 'aboutSection', 'ctaSection', 'collectionSection', 'orderSectionHeader'].forEach(key => {
+      if (overrides[key]) {
+        Object.assign(config[key], overrides[key]);
+      }
+    });
+
+    if (overrides.orderSteps) {
+      config.orderSteps = overrides.orderSteps;
+    }
+
+  } catch(e) {
+    console.warn('Could not load overrides:', e);
+  }
+  return config;
+}
+
+async function init() {
+  try {
+    const resp = await fetch('site-config.json');
+    let config = await resp.json();
+    config = loadOverrides(config);
+    renderPage(config);
+  } catch(err) {
+    console.error('Failed to load config:', err);
+  }
+}
+
+function renderPage(c) {
+  const waUrl = getWhatsAppUrl(c);
+  const igUrl = c.siteSettings.instagramUrl;
+  const activeCategories = c.categories
+    .filter(cat => cat.active)
+    .sort((a, b) => a.sortOrder - b.sortOrder);
+
+  // ── Meta
+  document.title = c.siteSettings.metaTitle;
+  document.querySelector('meta[name="description"]').setAttribute('content', c.siteSettings.metaDescription);
+
+  // ── Nav
+  document.getElementById('nav-logo').textContent = c.siteSettings.brandName;
+  document.getElementById('nav-order-btn').href = igUrl;
+
+  // ── Hero
+  document.getElementById('hero-badge').textContent = c.heroSection.badge;
+  document.getElementById('hero-title').innerHTML = `${escapeHtml(c.heroSection.titlePart1)}<span style="color:var(--rose-brand);font-style:italic;text-decoration:underline;text-decoration-style:wavy;text-decoration-color:var(--petal);text-underline-offset:4px;">${escapeHtml(c.heroSection.titleHighlight)}</span>${escapeHtml(c.heroSection.titlePart2)}`;
+  document.getElementById('hero-subtitle').textContent = c.heroSection.subtitle;
+  document.getElementById('hero-sticker').textContent = c.heroSection.stickerText;
+
+  document.getElementById('hero-wa-btn').href = waUrl;
+  document.getElementById('hero-ig-btn').href = igUrl;
+  document.getElementById('hero-ig-btn').textContent = `Follow @${c.siteSettings.instagramHandle}`;
+
+  // Hero images
+  const heroMainImg = c.images.find(i => i.id === 'hero-main');
+  const heroSmallImg = c.images.find(i => i.id === 'hero-small');
+  if (heroMainImg) {
+    document.getElementById('img-hero-main').src = heroMainImg.src;
+    document.getElementById('img-hero-main').alt = heroMainImg.alt;
+  }
+  if (heroSmallImg) {
+    document.getElementById('img-hero-small').src = heroSmallImg.src;
+    document.getElementById('img-hero-small').alt = heroSmallImg.alt;
+  }
+
+  // ── Marquee
+  const marqueeItems = activeCategories.map(cat => cat.name);
+  let marqueeHtml = '';
+  // Duplicate for seamless scrolling
+  for (let i = 0; i < 2; i++) {
+    marqueeItems.forEach(name => {
+      marqueeHtml += `<span>${escapeHtml(name)}<span style="color:var(--rose-brand);">✿</span></span>`;
+    });
+  }
+  document.getElementById('marquee-inner').innerHTML = marqueeHtml;
+
+  // ── Collection
+  document.getElementById('collection-label').textContent = c.collectionSection.label;
+  document.getElementById('collection-title').textContent = c.collectionSection.title;
+  document.getElementById('collection-desc').textContent = c.collectionSection.description;
+
+  let gridHtml = '';
+  activeCategories.forEach((cat, idx) => {
+    const imgSrc = getImageSrc(c, cat.imageId);
+    const imgAlt = getImageAlt(c, cat.imageId);
+    const evenStyle = idx % 2 !== 0 ? ' style="margin-top:2.5rem;"' : '';
+    gridHtml += `
+      <a href="category.html?cat=${cat.id}" class="cat-card"${evenStyle}>
+        <div class="cat-img-wrap" style="background:${cat.bgColor};">
+          <div class="cat-img-inner">
+            <img src="${imgSrc}" alt="${escapeHtml(imgAlt)}" width="640" height="640" loading="lazy">
+          </div>
+        </div>
+        <h3 class="cat-name">${escapeHtml(cat.name)}</h3>
+        <p class="cat-sub">${escapeHtml(cat.subtitle)}</p>
+      </a>
+    `;
+  });
+  document.getElementById('collection-grid').innerHTML = gridHtml;
+
+  // ── Story
+  const storyImg = c.images.find(i => i.id === 'story-main');
+  document.getElementById('story-badge').textContent = c.storySection.badge;
+  document.getElementById('story-title').textContent = c.storySection.title;
+  document.getElementById('story-paragraphs').innerHTML = c.storySection.paragraphs.map(p => `<p class="text-pretty">${escapeHtml(p)}</p>`).join('');
+  document.getElementById('story-link').textContent = c.storySection.linkText;
+  document.getElementById('story-link').href = igUrl;
+  document.getElementById('story-sticker1').textContent = c.storySection.sticker1;
+  document.getElementById('story-sticker2').textContent = c.storySection.sticker2;
+  if (storyImg) {
+    document.getElementById('img-story-main').src = storyImg.src;
+    document.getElementById('img-story-main').alt = storyImg.alt;
+  }
+
+  // ── About
+  const aboutImg = c.images.find(i => i.id === 'about-main');
+  document.getElementById('about-badge').textContent = c.aboutSection.badge;
+  document.getElementById('about-title').textContent = c.aboutSection.title;
+  document.getElementById('about-subtitle').textContent = c.aboutSection.subtitle;
+  document.getElementById('about-paragraphs').innerHTML = c.aboutSection.paragraphs.map(p => `<p class="text-pretty">${escapeHtml(p)}</p>`).join('');
+  document.getElementById('about-link').textContent = c.aboutSection.linkText;
+  document.getElementById('about-link').href = igUrl;
+  document.getElementById('about-sticker1').textContent = c.aboutSection.sticker1;
+  document.getElementById('about-sticker2').textContent = c.aboutSection.sticker2;
+  if (aboutImg) {
+    document.getElementById('img-about-main').src = aboutImg.src;
+    document.getElementById('img-about-main').alt = aboutImg.alt;
+  }
+
+  // ── Order steps
+  document.getElementById('order-title').innerHTML = escapeHtml(c.orderSectionHeader.title);
+  document.getElementById('order-desc').textContent = c.orderSectionHeader.description;
+  let stepsHtml = '';
+  c.orderSteps.forEach(step => {
+    stepsHtml += `
+      <div class="order-card" style="background:${step.bgColor};">
+        <div class="order-step">${escapeHtml(step.step)}</div>
+        <h3>${escapeHtml(step.title)}</h3>
+        <p>${escapeHtml(step.description)}</p>
+      </div>
+    `;
+  });
+  document.getElementById('order-grid').innerHTML = stepsHtml;
+
+  // ── CTA
+  document.getElementById('cta-title').textContent = c.ctaSection.title;
+  document.getElementById('cta-subtitle').textContent = c.ctaSection.subtitle;
+  document.getElementById('cta-wa-btn').href = waUrl;
+  document.getElementById('cta-wa-btn').textContent = c.ctaSection.whatsappBtnText;
+  document.getElementById('cta-ig-btn').href = igUrl;
+  document.getElementById('cta-ig-btn').textContent = c.ctaSection.instagramBtnText;
+
+  // ── Footer
+  document.getElementById('footer-logo').textContent = c.siteSettings.brandName;
+  document.getElementById('footer-tagline').textContent = c.siteSettings.tagline;
+  document.getElementById('footer-copy').textContent = c.siteSettings.copyrightText;
+  document.getElementById('footer-links').innerHTML = `
+    <a href="${igUrl}" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="${waUrl}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a href="#collection">Catalog</a>
+  `;
+
+  // ── Float buttons
+  document.getElementById('float-wa').href = waUrl;
+  document.getElementById('float-ig').href = igUrl;
+}
+
+init();
+</script>
 
 </body>
 </html>
