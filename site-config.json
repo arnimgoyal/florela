@@ -162,31 +162,40 @@
   ],
   "products": [
     {
-      "id": "prod-001",
+      "id": "prod-mqic1o0p",
+      "name": "The celestia classic \u2728",
+      "description": "A handcrafted floral keepsake inspired by the grace of a blooming lily. Designed to bring beauty, warmth, and a touch of timeless charm to every special moment.",
       "categoryId": "bouquets",
-      "name": "Sunset Rose Bouquet",
-      "description": "A warm-toned bouquet with hand-twisted roses in shades of peach, coral, and soft yellow. Perfect for gifting or home d\u00e9cor.",
-      "image": "images/cat-bouquets.jpg",
-      "imageAlt": "Sunset Rose Bouquet \u2014 handmade pipe cleaner flowers by Florela",
-      "active": true
+      "imageAlt": "The celestia classic",
+      "active": true,
+      "image": "images/20260615_184808.jpg"
     },
     {
-      "id": "prod-002",
-      "categoryId": "flowers",
-      "name": "Lavender Daisy Stem",
-      "description": "A single fuzzy daisy stem in soft lavender with a cheerful yellow center. Never wilts, always brightens your day.",
-      "image": "images/cat-wild-flowers.jpg",
-      "imageAlt": "Lavender Daisy Stem \u2014 handmade pipe cleaner flower by Florela",
-      "active": true
+      "id": "prod-mqic6mjz",
+      "name": "The Bluebell Classic \ud83d\udc0b",
+      "description": "A handcrafted bloom inspired by the gentle charm of bluebell flowers and the beauty of meaningful moments. Designed to stay vibrant long after the occasion has passed, making every gift a memory worth keeping.",
+      "categoryId": "bouquets",
+      "imageAlt": "The Bluebell Classic",
+      "active": true,
+      "image": "images/20260615_184237.jpg"
     },
     {
-      "id": "prod-003",
-      "categoryId": "desk-decor",
-      "name": "Dancing Sunflower",
-      "description": "A wiggly, cheerful sunflower that sits on your desk and sways with a gentle tap. The ultimate desk companion.",
-      "image": "images/cat-dancing-flowers.jpg",
-      "imageAlt": "Dancing Sunflower \u2014 handmade pipe cleaner craft by Florela",
-      "active": true
+      "id": "prod-mqic81ia",
+      "name": "The Rosabella Classic \ud83c\udf39",
+      "description": "A handcrafted floral creation designed to capture the beauty of a blooming lily and the warmth of a heartfelt gift.",
+      "categoryId": "bouquets",
+      "imageAlt": "The Rosabella Classic",
+      "active": true,
+      "image": "images/20260615_184630.jpg"
+    },
+    {
+      "id": "prod-mqic9a7g",
+      "name": "The Clover Classic \ud83c\udf40\u2728",
+      "description": "A handcrafted floral treasure inspired by the charm of delicate blooms and the beauty of thoughtful gestures. Created to turn everyday moments into memories worth keeping.",
+      "categoryId": "bouquets",
+      "imageAlt": "The Clover Classic",
+      "active": true,
+      "image": "images/20260615_184414.jpg"
     }
   ],
   "images": [
