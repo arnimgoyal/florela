@@ -1,0 +1,23 @@
+{
+  "name": "primary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test_add.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnimgoyal/florela.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arnimgoyal/florela/issues"
+  },
+  "homepage": "https://github.com/arnimgoyal/florela#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
