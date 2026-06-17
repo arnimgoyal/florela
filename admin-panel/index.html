@@ -481,7 +481,7 @@ body::after { content: ''; position: fixed; bottom: -30%; left: -10%; width: 500
       <div class="drop-zone" id="image-drop-zone" onclick="document.getElementById('image-file-input').click()">
         <svg class="drop-zone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
         <p class="drop-zone-text">Click to upload or drag & drop</p>
-        <p class="drop-zone-hint">Supports JPG, PNG, WebP · Max 5MB</p>
+        <p class="drop-zone-hint">Supports JPG, PNG, WebP · Max 10MB</p>
       </div>
       <input type="file" id="image-file-input" accept="image/*" style="display:none" onchange="handleImageFileSelect(event)">
       <button class="btn btn-primary" style="width:100%;justify-content:center;" id="image-modal-apply-btn" onclick="applyImage()" disabled>Apply Image</button>
@@ -576,7 +576,7 @@ body::after { content: ''; position: fixed; bottom: -30%; left: -10%; width: 500
         <div class="drop-zone drop-zone-sm" id="prod-drop-zone" onclick="document.getElementById('prod-file-input').click()">
           <svg class="drop-zone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
           <p class="drop-zone-text">Upload product image</p>
-          <p class="drop-zone-hint">JPG, PNG, WebP · Max 5MB</p>
+          <p class="drop-zone-hint">JPG, PNG, WebP · Max 10MB</p>
         </div>
         <input type="file" id="prod-file-input" accept="image/*" style="display:none" onchange="handleProductFileSelect(event)">
       </div>
@@ -998,7 +998,7 @@ function handleImageFileSelect(event) {
 }
 
 function processImageFile(file) {
-  if (file.size > 5 * 1024 * 1024) { showToast('Image must be under 5MB', 'info'); return; }
+  if (file.size > 10 * 1024 * 1024) { showToast('Image must be under 10MB', 'info'); return; }
   const reader = new FileReader();
   reader.onload = e => {
     pendingImageData = e.target.result;
@@ -1308,7 +1308,7 @@ function handleProductFileSelect(event) {
 }
 
 function processProductFile(file) {
-  if (file.size > 5 * 1024 * 1024) { showToast('Image must be under 5MB', 'info'); return; }
+  if (file.size > 10 * 1024 * 1024) { showToast('Image must be under 10MB', 'info'); return; }
   const reader = new FileReader();
   reader.onload = async e => {
     const base64Data = e.target.result;
