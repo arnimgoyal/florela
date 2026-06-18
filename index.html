@@ -1,492 +1,1252 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Florela — Hand-twisted Pipe Cleaner Flowers &amp; Craft</title>
-<meta name="description" content="Florela makes joyful, handmade pipe cleaner flowers, bouquets, keychains, dancing flowers, lamps, bag charms, curtain holders and bento boxes. Order via WhatsApp or Instagram.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --canvas: #fdfaf6;
-  --ink: #3f3f46;
-  --petal: #fecdd3;
-  --stem: #d9f99d;
-  --sunny: #fef08a;
-  --lilac: #ddd6fe;
-  --rose-brand: #f43f5e;
-  --whatsapp: #25D366;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Hanken Grotesk', sans-serif; background: var(--canvas); color: var(--ink); line-height: 1.6; }
-h1, h2, h3, h4 { font-family: 'Young Serif', serif; }
-img { max-width: 100%; height: auto; display: block; }
-a { color: inherit; text-decoration: none; }
-.container { max-width: 1152px; margin: 0 auto; padding: 0 1.5rem; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Florela — Hand-twisted Pipe Cleaner Flowers &amp; Craft</title>
+  <meta name="description"
+    content="Florela makes joyful, handmade pipe cleaner flowers, bouquets, keychains, dancing flowers, lamps, bag charms, curtain holders and bento boxes. Order via WhatsApp or Instagram.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --canvas: #fdfaf6;
+      --ink: #3f3f46;
+      --petal: #fecdd3;
+      --stem: #d9f99d;
+      --sunny: #fef08a;
+      --lilac: #ddd6fe;
+      --rose-brand: #f43f5e;
+      --whatsapp: #25D366;
+    }
 
-/* Nav */
-nav { position: sticky; top: 0; z-index: 50; background: rgba(253,250,246,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-.nav-logo { font-family: 'Young Serif', serif; font-size: 1.5rem; color: var(--rose-brand); }
-.nav-links { display: flex; align-items: center; gap: 1.5rem; }
-.nav-links a { font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover { color: var(--rose-brand); }
-.nav-cat-link { position: relative; }
-.nav-cat-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--rose-brand); transition: width 0.3s ease; }
-.nav-cat-link:hover::after { width: 100%; }
-.btn-primary { display: inline-block; background: var(--rose-brand); color: #fff; font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1rem; border-radius: 9999px; transition: transform 0.2s; }
-.btn-primary:hover { transform: scale(1.05); }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* Mobile nav toggle */
-.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; color: var(--ink); }
-@media(max-width: 768px) {
-  .nav-toggle { display: flex; align-items: center; }
-  .nav-links { 
-    display: none; 
-    position: absolute; top: 64px; left: 0; right: 0; 
-    background: rgba(253,250,246,0.98); backdrop-filter: blur(12px);
-    flex-direction: column; padding: 1.5rem; gap: 1rem; 
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  }
-  .nav-links.open { display: flex; }
-}
+    body {
+      font-family: 'Hanken Grotesk', sans-serif;
+      background: var(--canvas);
+      color: var(--ink);
+      line-height: 1.6;
+    }
 
-/* Hero */
-.hero { padding: 5rem 0; overflow: hidden; }
-.hero-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
-@media(min-width:1024px) { .hero-grid { grid-template-columns: 1fr 1fr; } }
-.hero-badge { display: inline-block; font-size: 0.625rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--rose-brand); background: rgba(254,205,211,0.4); padding: 0.25rem 0.75rem; border-radius: 9999px; margin-bottom: 1.5rem; }
-.hero h1 { font-size: 3rem; line-height: 1.05; margin-bottom: 2rem; }
-@media(min-width:1024px) { .hero h1 { font-size: 4.5rem; } }
-.hero p { font-size: 1.125rem; color: #6b7280; margin-bottom: 2.5rem; max-width: 48ch; line-height: 1.75; }
-.hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; }
-.btn-wa { background: var(--whatsapp); color: #fff; font-weight: 600; padding: 0.875rem 1.5rem; border-radius: 9999px; box-shadow: 0 0 0 4px rgba(37,211,102,0.15); transition: all 0.2s; }
-.btn-wa:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(37,211,102,0.25); }
-.btn-ig { background: #fff; color: var(--ink); border: 1px solid rgba(0,0,0,0.1); font-weight: 600; padding: 0.875rem 1.5rem; border-radius: 9999px; transition: background 0.2s; }
-.btn-ig:hover { background: rgba(254,205,211,0.2); }
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Young Serif', serif;
+    }
 
-.hero-visual { position: relative; height: 460px; }
-@media(min-width:1024px) { .hero-visual { height: 560px; } }
-.hero-img-main { position: absolute; right: 0; top: 0; width: 78%; aspect-ratio: 4/5; border-radius: 40px; overflow: hidden; transform: rotate(3deg); box-shadow: 0 25px 50px -12px rgba(254,205,211,0.4); border: 1px solid rgba(0,0,0,0.05); }
-.hero-img-main img { width: 100%; height: 100%; object-fit: cover; }
-.hero-img-small { position: absolute; bottom: -8px; left: 0; width: 11rem; height: 11rem; border-radius: 50%; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); animation: sway 3s ease-in-out infinite; }
-.hero-img-small img { width: 100%; height: 100%; object-fit: cover; }
-.hero-sticker { position: absolute; top: 1.5rem; left: 1rem; background: var(--sunny); padding: 0.375rem 0.75rem; border-radius: 0.5rem; transform: rotate(-6deg); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); font-family: 'Young Serif', serif; font-size: 0.875rem; }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
-@keyframes sway { 0%,100%{transform:rotate(-3deg)translateY(0)} 50%{transform:rotate(3deg)translateY(-6px)} }
-@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-/* Marquee */
-.marquee { background: rgba(221,214,254,0.3); border-top: 1px solid rgba(221,214,254,0.6); border-bottom: 1px solid rgba(221,214,254,0.6); padding: 1.25rem 0; overflow: hidden; }
-.marquee-inner { display: flex; gap: 3rem; white-space: nowrap; animation: marquee 30s linear infinite; width: max-content; }
-.marquee span { font-family: 'Young Serif', serif; font-size: 1.5rem; color: rgba(63,63,70,0.7); text-transform: uppercase; letter-spacing: 0.2em; display: flex; align-items: center; gap: 3rem; }
+    .container {
+      max-width: 1152px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
 
-/* Section headings */
-.section-label { display: inline-block; font-size: 0.625rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--rose-brand); margin-bottom: 1rem; }
-.section-title { font-size: 2.25rem; margin-bottom: 1rem; }
-@media(min-width:768px) { .section-title { font-size: 3rem; } }
-.section-desc { color: #6b7280; max-width: 52ch; margin: 0 auto; line-height: 1.6; }
+    /* Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(253, 250, 246, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
 
-/* Collection */
-.collection { padding: 6rem 0; background: #fff; }
-.collection-header { text-align: center; margin-bottom: 4rem; }
-.collection-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; width: 65%; margin: 0 auto; }
-@media(min-width:768px) { .collection-grid { grid-template-columns: repeat(3, 1fr); } }
-.cat-card { display: block; }
-.cat-card:nth-child(even) { margin-top: 0; }
-@media(min-width:768px) { .cat-card:nth-child(even) { margin-top: 2.5rem; } }
-.cat-img-wrap { aspect-ratio: 1; border-radius: 28px; padding: 0.75rem; border: 1px solid rgba(0,0,0,0.05); transition: all 0.5s; margin-bottom: 1rem; }
-.cat-card:hover .cat-img-wrap { transform: rotate(-2deg) translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
-.cat-img-inner { width: 100%; height: 100%; border-radius: 20px; overflow: hidden; background: rgba(255,255,255,0.4); }
-.cat-img-inner img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s; }
-.cat-card:hover .cat-img-inner img { transform: scale(1.05); }
-.cat-name { font-family: 'Young Serif', serif; font-size: 1.25rem; text-align: center; }
-.cat-sub { font-size: 0.75rem; color: #6b7280; text-align: center; margin-top: 0.25rem; }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
 
-/* Story */
-.story { padding: 6rem 0; background: var(--canvas); }
-.story-card { background: #fff; border-radius: 40px; padding: 2rem; border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 3rem; align-items: center; position: relative; }
-@media(min-width:768px) { .story-card { flex-direction: row; padding: 4rem; gap: 4rem; } }
-.story-text { flex: 1; }
-.story-badge { display: inline-block; background: var(--stem); padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1.5rem; }
-.story h2 { font-size: 1.875rem; margin-bottom: 2rem; line-height: 1.2; }
-@media(min-width:768px) { .story h2 { font-size: 3rem; } }
-.story p { color: #6b7280; line-height: 1.75; margin-bottom: 1.25rem; }
-.story-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 2rem; color: var(--rose-brand); font-weight: 600; border-bottom: 2px solid var(--petal); padding-bottom: 0.25rem; transition: border-color 0.2s; }
-.story-link:hover { border-color: var(--rose-brand); }
-.story-visual { flex: 1; position: relative; width: 100%; }
-.story-img { width: 100%; aspect-ratio: 1; border-radius: 32px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); background: rgba(254,205,211,0.2); }
-.story-img img { width: 100%; height: 100%; object-fit: cover; }
-.sticker { position: absolute; padding: 0.5rem 1rem; border-radius: 0.5rem; font-family: 'Young Serif', serif; font-size: 0.875rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.05); }
+    .nav-logo {
+      font-family: 'Young Serif', serif;
+      font-size: 1.5rem;
+      color: var(--rose-brand);
+    }
 
-/* About */
-.about { padding: 6rem 0; background: #fff; }
-.about-grid { display: flex; flex-direction: column; gap: 3rem; align-items: center; }
-@media(min-width:768px) { .about-grid { flex-direction: row; gap: 4rem; } }
-.about-visual { flex: 1; position: relative; width: 100%; order: 2; }
-@media(min-width:768px) { .about-visual { order: 1; } }
-.about-img { width: 100%; aspect-ratio: 4/5; border-radius: 36px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); background: rgba(254,205,211,0.2); transform: rotate(-2deg); }
-.about-img img { width: 100%; height: 100%; object-fit: cover; }
-.about-text { flex: 1; order: 1; }
-@media(min-width:768px) { .about-text { order: 2; } }
-.about-badge { display: inline-block; background: rgba(254,205,211,0.5); padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1.5rem; }
-.about h2 { font-size: 1.875rem; margin-bottom: 0.5rem; line-height: 1.2; }
-@media(min-width:768px) { .about h2 { font-size: 3rem; } }
-.about-sub { font-size: 1.125rem; color: var(--rose-brand); font-weight: 600; margin-bottom: 2rem; }
-.about p { color: #6b7280; line-height: 1.75; margin-bottom: 1.25rem; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
 
-/* How to order */
-.order { padding: 6rem 0; background: #fff; }
-.order-header { text-align: center; margin-bottom: 3.5rem; }
-.order-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-@media(min-width:768px) { .order-grid { grid-template-columns: repeat(3, 1fr); } }
-.order-card { border-radius: 28px; padding: 1.5rem; border: 1px solid rgba(0,0,0,0.05); transition: transform 0.2s; }
-.order-card:hover { transform: translateY(-4px); }
-.order-step { font-family: 'Young Serif', serif; font-size: 1.875rem; color: var(--rose-brand); margin-bottom: 0.75rem; }
-.order-card h3 { font-family: 'Young Serif', serif; font-size: 1.5rem; margin-bottom: 0.5rem; }
-.order-card p { font-size: 0.875rem; color: rgba(63,63,70,0.7); line-height: 1.6; }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
 
-/* CTA */
-.cta { padding: 6rem 0; }
-.cta-box { background: var(--rose-brand); border-radius: 36px; padding: 4rem 2rem; text-align: center; position: relative; overflow: hidden; color: #fff; }
-.cta-box h2 { font-size: 2.25rem; margin-bottom: 1.5rem; }
-@media(min-width:768px) { .cta-box h2 { font-size: 3rem; } }
-.cta-box p { color: rgba(255,255,255,0.85); font-size: 1.125rem; max-width: 28rem; margin: 0 auto 2.5rem; }
-.cta-btns { display: flex; flex-direction: column; gap: 1rem; justify-content: center; align-items: center; }
-@media(min-width:640px) { .cta-btns { flex-direction: row; } }
-.btn-light { background: #fff; color: var(--rose-brand); padding: 0.875rem 1.75rem; border-radius: 9999px; font-weight: 700; transition: transform 0.2s; }
-.btn-light:hover { transform: scale(1.05); }
-.btn-outline { background: transparent; color: #fff; padding: 0.875rem 1.75rem; border-radius: 9999px; font-weight: 700; border: 1px solid rgba(255,255,255,0.4); transition: background 0.2s; }
-.btn-outline:hover { background: rgba(255,255,255,0.1); }
-.cta-deco { position: absolute; border-radius: 50%; }
+    .nav-links a:hover {
+      color: var(--rose-brand);
+    }
 
-/* Footer */
-footer { padding: 3rem 0; border-top: 1px solid rgba(0,0,0,0.05); text-align: center; }
-footer .logo { font-family: 'Young Serif', serif; font-size: 1.875rem; color: var(--rose-brand); margin-bottom: 1rem; }
-footer .tagline { font-size: 0.875rem; color: #6b7280; font-style: italic; margin-bottom: 1.5rem; }
-footer .links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
-footer .links a { font-size: 0.875rem; font-weight: 600; transition: color 0.2s; }
-footer .links a:hover { color: var(--rose-brand); }
-footer .copy { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.3em; color: #6b7280; }
+    .nav-cat-link {
+      position: relative;
+    }
 
-/* Float buttons */
-.float-btns { position: fixed; bottom: 1.25rem; right: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; z-index: 50; }
-.float-btn { width: 3.5rem; height: 3.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 2px solid #fff; transition: transform 0.2s; }
-.float-btn:hover { transform: scale(1.1); }
+    .nav-cat-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--rose-brand);
+      transition: width 0.3s ease;
+    }
 
-/* Utility */
-.text-center { text-align: center; }
-.text-balance { text-wrap: balance; }
-.text-pretty { text-wrap: pretty; }
+    .nav-cat-link:hover::after {
+      width: 100%;
+    }
 
-/* Loading skeleton */
-.skeleton { background: linear-gradient(90deg, rgba(0,0,0,0.04) 25%, rgba(0,0,0,0.08) 50%, rgba(0,0,0,0.04) 75%); background-size: 200% 100%; animation: skeleton-shimmer 1.5s ease-in-out infinite; border-radius: 12px; }
-@keyframes skeleton-shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
-</style>
-<script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
+    .btn-primary {
+      display: inline-block;
+      background: var(--rose-brand);
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      transition: transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+    }
+
+    /* Mobile nav toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--ink);
+    }
+
+    @media(max-width: 768px) {
+      .nav-toggle {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(253, 250, 246, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      padding: 5rem 0;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media(min-width:1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.625rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--rose-brand);
+      background: rgba(254, 205, 211, 0.4);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.05;
+      margin-bottom: 2rem;
+    }
+
+    @media(min-width:1024px) {
+      .hero h1 {
+        font-size: 4.5rem;
+      }
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: #6b7280;
+      margin-bottom: 2.5rem;
+      max-width: 48ch;
+      line-height: 1.75;
+    }
+
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn-wa {
+      background: var(--whatsapp);
+      color: #fff;
+      font-weight: 600;
+      padding: 0.875rem 1.5rem;
+      border-radius: 9999px;
+      box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.15);
+      transition: all 0.2s;
+    }
+
+    .btn-wa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(37, 211, 102, 0.25);
+    }
+
+    .btn-ig {
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      font-weight: 600;
+      padding: 0.875rem 1.5rem;
+      border-radius: 9999px;
+      transition: background 0.2s;
+    }
+
+    .btn-ig:hover {
+      background: rgba(254, 205, 211, 0.2);
+    }
+
+    .hero-visual {
+      position: relative;
+      height: 460px;
+    }
+
+    @media(min-width:1024px) {
+      .hero-visual {
+        height: 560px;
+      }
+    }
+
+    .hero-img-main {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 78%;
+      aspect-ratio: 4/5;
+      border-radius: 40px;
+      overflow: hidden;
+      transform: rotate(3deg);
+      box-shadow: 0 25px 50px -12px rgba(254, 205, 211, 0.4);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .hero-img-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-img-small {
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 11rem;
+      height: 11rem;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      animation: sway 3s ease-in-out infinite;
+    }
+
+    .hero-img-small img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-sticker {
+      position: absolute;
+      top: 1.5rem;
+      left: 1rem;
+      background: var(--sunny);
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.5rem;
+      transform: rotate(-6deg);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      font-family: 'Young Serif', serif;
+      font-size: 0.875rem;
+    }
+
+    @keyframes sway {
+
+      0%,
+      100% {
+        transform: rotate(-3deg)translateY(0)
+      }
+
+      50% {
+        transform: rotate(3deg)translateY(-6px)
+      }
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    /* Marquee */
+    .marquee {
+      background: rgba(221, 214, 254, 0.3);
+      border-top: 1px solid rgba(221, 214, 254, 0.6);
+      border-bottom: 1px solid rgba(221, 214, 254, 0.6);
+      padding: 1.25rem 0;
+      overflow: hidden;
+    }
+
+    .marquee-inner {
+      display: flex;
+      gap: 3rem;
+      white-space: nowrap;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+    }
+
+    .marquee span {
+      font-family: 'Young Serif', serif;
+      font-size: 1.5rem;
+      color: rgba(63, 63, 70, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    /* Section headings */
+    .section-label {
+      display: inline-block;
+      font-size: 0.625rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--rose-brand);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+    }
+
+    @media(min-width:768px) {
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+
+    .section-desc {
+      color: #6b7280;
+      max-width: 52ch;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Collection */
+    .collection {
+      padding: 6rem 0;
+      background: #fff;
+    }
+
+    .collection-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      width: 65%;
+      margin: 0 auto;
+    }
+
+    @media(min-width:768px) {
+      .collection-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .cat-card {
+      display: block;
+    }
+
+    .cat-card:nth-child(even) {
+      margin-top: 0;
+    }
+
+    @media(min-width:768px) {
+      .cat-card:nth-child(even) {
+        margin-top: 2.5rem;
+      }
+    }
+
+    .cat-img-wrap {
+      aspect-ratio: 1;
+      border-radius: 28px;
+      padding: 0.75rem;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      transition: all 0.5s;
+      margin-bottom: 1rem;
+    }
+
+    .cat-card:hover .cat-img-wrap {
+      transform: rotate(-2deg) translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .cat-img-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .cat-img-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s;
+    }
+
+    .cat-card:hover .cat-img-inner img {
+      transform: scale(1.05);
+    }
+
+    .cat-name {
+      font-family: 'Young Serif', serif;
+      font-size: 1.25rem;
+      text-align: center;
+    }
+
+    .cat-sub {
+      font-size: 0.75rem;
+      color: #6b7280;
+      text-align: center;
+      margin-top: 0.25rem;
+    }
+
+    /* Story */
+    .story {
+      padding: 6rem 0;
+      background: var(--canvas);
+    }
+
+    .story-card {
+      background: #fff;
+      border-radius: 40px;
+      padding: 2rem;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+    }
+
+    @media(min-width:768px) {
+      .story-card {
+        flex-direction: row;
+        padding: 4rem;
+        gap: 4rem;
+      }
+    }
+
+    .story-text {
+      flex: 1;
+    }
+
+    .story-badge {
+      display: inline-block;
+      background: var(--stem);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 1.5rem;
+    }
+
+    .story h2 {
+      font-size: 1.875rem;
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
+
+    @media(min-width:768px) {
+      .story h2 {
+        font-size: 3rem;
+      }
+    }
+
+    .story p {
+      color: #6b7280;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .story-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      color: var(--rose-brand);
+      font-weight: 600;
+      border-bottom: 2px solid var(--petal);
+      padding-bottom: 0.25rem;
+      transition: border-color 0.2s;
+    }
+
+    .story-link:hover {
+      border-color: var(--rose-brand);
+    }
+
+    .story-visual {
+      flex: 1;
+      position: relative;
+      width: 100%;
+    }
+
+    .story-img {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 32px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      background: rgba(254, 205, 211, 0.2);
+    }
+
+    .story-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sticker {
+      position: absolute;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-family: 'Young Serif', serif;
+      font-size: 0.875rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    /* About */
+    .about {
+      padding: 6rem 0;
+      background: #fff;
+    }
+
+    .about-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media(min-width:768px) {
+      .about-grid {
+        flex-direction: row;
+        gap: 4rem;
+      }
+    }
+
+    .about-visual {
+      flex: 1;
+      position: relative;
+      width: 100%;
+      order: 2;
+    }
+
+    @media(min-width:768px) {
+      .about-visual {
+        order: 1;
+      }
+    }
+
+    .about-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: 36px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      background: rgba(254, 205, 211, 0.2);
+      transform: rotate(-2deg);
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-text {
+      flex: 1;
+      order: 1;
+    }
+
+    @media(min-width:768px) {
+      .about-text {
+        order: 2;
+      }
+    }
+
+    .about-badge {
+      display: inline-block;
+      background: rgba(254, 205, 211, 0.5);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 1.5rem;
+    }
+
+    .about h2 {
+      font-size: 1.875rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    @media(min-width:768px) {
+      .about h2 {
+        font-size: 3rem;
+      }
+    }
+
+    .about-sub {
+      font-size: 1.125rem;
+      color: var(--rose-brand);
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    .about p {
+      color: #6b7280;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    /* How to order */
+    .order {
+      padding: 6rem 0;
+      background: #fff;
+    }
+
+    .order-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .order-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media(min-width:768px) {
+      .order-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .order-card {
+      border-radius: 28px;
+      padding: 1.5rem;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s;
+    }
+
+    .order-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .order-step {
+      font-family: 'Young Serif', serif;
+      font-size: 1.875rem;
+      color: var(--rose-brand);
+      margin-bottom: 0.75rem;
+    }
+
+    .order-card h3 {
+      font-family: 'Young Serif', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .order-card p {
+      font-size: 0.875rem;
+      color: rgba(63, 63, 70, 0.7);
+      line-height: 1.6;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 6rem 0;
+    }
+
+    .cta-box {
+      background: var(--rose-brand);
+      border-radius: 36px;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .cta-box h2 {
+      font-size: 2.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media(min-width:768px) {
+      .cta-box h2 {
+        font-size: 3rem;
+      }
+    }
+
+    .cta-box p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.125rem;
+      max-width: 28rem;
+      margin: 0 auto 2.5rem;
+    }
+
+    .cta-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media(min-width:640px) {
+      .cta-btns {
+        flex-direction: row;
+      }
+    }
+
+    .btn-light {
+      background: #fff;
+      color: var(--rose-brand);
+      padding: 0.875rem 1.75rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      transition: transform 0.2s;
+    }
+
+    .btn-light:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      padding: 0.875rem 1.75rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      transition: background 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .cta-deco {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    footer .logo {
+      font-family: 'Young Serif', serif;
+      font-size: 1.875rem;
+      color: var(--rose-brand);
+      margin-bottom: 1rem;
+    }
+
+    footer .tagline {
+      font-size: 0.875rem;
+      color: #6b7280;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    footer .links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    footer .links a {
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    footer .links a:hover {
+      color: var(--rose-brand);
+    }
+
+    footer .copy {
+      font-size: 0.625rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: #6b7280;
+    }
+
+    /* Float buttons */
+    .float-btns {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      z-index: 50;
+    }
+
+    .float-btn {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      border: 2px solid #fff;
+      transition: transform 0.2s;
+    }
+
+    .float-btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* Utility */
+    .text-center {
+      text-align: center;
+    }
+
+    .text-balance {
+      text-wrap: balance;
+    }
+
+    .text-pretty {
+      text-wrap: pretty;
+    }
+
+    /* Loading skeleton */
+    .skeleton {
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.04) 25%, rgba(0, 0, 0, 0.08) 50%, rgba(0, 0, 0, 0.04) 75%);
+      background-size: 200% 100%;
+      animation: skeleton-shimmer 1.5s ease-in-out infinite;
+      border-radius: 12px;
+    }
+
+    @keyframes skeleton-shimmer {
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
+    }
+  </style>
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
+
 <body>
 
-<!-- Skeleton placeholders while config loads -->
-<nav>
-  <div class="container nav-inner">
-    <a href="#top" class="nav-logo" id="nav-logo">Florela</a>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" onclick="document.getElementById('nav-links').classList.toggle('open')">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-    <div class="nav-links" id="nav-links">
-      <a href="category.html?cat=bouquets">Catalogue</a>
-      <a href="#about">About</a>
-      <a href="#story">Our Story</a>
-      <a href="#" id="nav-order-btn" class="btn-primary">Order Now</a>
-    </div>
-  </div>
-</nav>
-
-<header id="top" class="hero">
-  <div class="container hero-grid">
-    <div style="max-width:48ch;">
-      <span class="hero-badge" id="hero-badge"></span>
-      <h1 class="text-balance" id="hero-title"></h1>
-      <p class="text-pretty" id="hero-subtitle"></p>
-      <div class="hero-btns">
-        <a href="#" id="hero-wa-btn" target="_blank" rel="noopener noreferrer" class="btn-wa">Order via WhatsApp</a>
-        <a href="#" id="hero-ig-btn" target="_blank" rel="noopener noreferrer" class="btn-ig">Follow @florela.ever</a>
+  <!-- Skeleton placeholders while config loads -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#top" class="nav-logo" id="nav-logo">Florela</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="category.html?cat=bouquets">Catalogue</a>
+        <a href="#about">About</a>
+        <a href="#story">Our Story</a>
+        <a href="#" id="nav-order-btn" class="btn-primary">Order Now</a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-img-main">
-        <img id="img-hero-main" src="" alt="" width="896" height="1088">
-      </div>
-      <div class="hero-img-small">
-        <img id="img-hero-small" src="" alt="" width="640" height="640" loading="lazy">
-      </div>
-      <div class="hero-sticker" id="hero-sticker"></div>
-    </div>
-  </div>
-</header>
+  </nav>
 
-<div class="marquee">
-  <div class="marquee-inner" id="marquee-inner">
-    <!-- Filled by JS -->
-  </div>
-</div>
-
-<section id="collection" class="collection">
-  <div class="container">
-    <div class="collection-header">
-      <span class="section-label" id="collection-label"></span>
-      <h2 class="section-title text-balance" id="collection-title"></h2>
-      <p class="section-desc text-pretty" id="collection-desc"></p>
+  <header id="top" class="hero">
+    <div class="container hero-grid">
+      <div style="max-width:48ch;">
+        <span class="hero-badge" id="hero-badge"></span>
+        <h1 class="text-balance" id="hero-title"></h1>
+        <p class="text-pretty" id="hero-subtitle"></p>
+        <div class="hero-btns">
+          <a href="#" id="hero-wa-btn" target="_blank" rel="noopener noreferrer" class="btn-wa">Order via WhatsApp</a>
+          <a href="#" id="hero-ig-btn" target="_blank" rel="noopener noreferrer" class="btn-ig">Follow @florela.ever</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-img-main">
+          <img id="img-hero-main" src="" alt="" width="896" height="1088">
+        </div>
+        <div class="hero-img-small">
+          <img id="img-hero-small" src="" alt="" width="640" height="640" loading="lazy">
+        </div>
+        <div class="hero-sticker" id="hero-sticker"></div>
+      </div>
     </div>
-    <div class="collection-grid" id="collection-grid">
+  </header>
+
+  <div class="marquee">
+    <div class="marquee-inner" id="marquee-inner">
       <!-- Filled by JS -->
     </div>
   </div>
-</section>
 
-<section id="story" class="story">
-  <div class="container">
-    <div class="story-card">
-      <div class="story-text">
-        <span class="story-badge" id="story-badge"></span>
-        <h2 class="text-balance" id="story-title"></h2>
-        <div id="story-paragraphs"></div>
-        <a href="#" id="story-link" target="_blank" rel="noopener noreferrer" class="story-link"></a>
+  <section id="collection" class="collection">
+    <div class="container">
+      <div class="collection-header">
+        <span class="section-label" id="collection-label"></span>
+        <h2 class="section-title text-balance" id="collection-title"></h2>
+        <p class="section-desc text-pretty" id="collection-desc"></p>
       </div>
-      <div class="story-visual">
-        <div class="story-img">
-          <img id="img-story-main" src="" alt="" width="896" height="896" loading="lazy">
+      <div class="collection-grid" id="collection-grid">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </section>
+
+  <section id="story" class="story">
+    <div class="container">
+      <div class="story-card">
+        <div class="story-text">
+          <span class="story-badge" id="story-badge"></span>
+          <h2 class="text-balance" id="story-title"></h2>
+          <div id="story-paragraphs"></div>
+          <a href="#" id="story-link" target="_blank" rel="noopener noreferrer" class="story-link"></a>
         </div>
-        <div class="sticker" id="story-sticker1" style="top:-1rem;right:-1rem;background:var(--sunny);transform:rotate(12deg);"></div>
-        <div class="sticker" id="story-sticker2" style="bottom:-1rem;left:-1rem;background:var(--lilac);transform:rotate(-6deg);"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="about" class="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-visual">
-        <div class="about-img">
-          <img id="img-about-main" src="" alt="" width="1024" height="1024" loading="lazy">
-        </div>
-        <div class="sticker" id="about-sticker1" style="top:-0.75rem;right:-0.75rem;background:var(--sunny);transform:rotate(6deg);"></div>
-        <div class="sticker" id="about-sticker2" style="bottom:-0.75rem;left:-0.75rem;background:var(--lilac);transform:rotate(-3deg);"></div>
-      </div>
-      <div class="about-text">
-        <span class="about-badge" id="about-badge"></span>
-        <h2 class="text-balance" id="about-title"></h2>
-        <p class="about-sub" id="about-subtitle"></p>
-        <div id="about-paragraphs"></div>
-        <a href="#" id="about-link" target="_blank" rel="noopener noreferrer" class="story-link"></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="order" class="order">
-  <div class="container">
-    <div class="order-header">
-      <h2 class="section-title" id="order-title"></h2>
-      <p class="section-desc" id="order-desc"></p>
-    </div>
-    <div class="order-grid" id="order-grid">
-      <!-- Filled by JS -->
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="container" style="max-width:896px;">
-    <div class="cta-box">
-      <div style="position:relative;z-index:1;">
-        <h2 class="text-balance" id="cta-title"></h2>
-        <p id="cta-subtitle"></p>
-        <div class="cta-btns">
-          <a href="#" id="cta-wa-btn" target="_blank" rel="noopener noreferrer" class="btn-light"></a>
-          <a href="#" id="cta-ig-btn" target="_blank" rel="noopener noreferrer" class="btn-outline"></a>
+        <div class="story-visual">
+          <div class="story-img">
+            <img id="img-story-main" src="" alt="" width="896" height="896" loading="lazy">
+          </div>
+          <div class="sticker" id="story-sticker1"
+            style="top:-1rem;right:-1rem;background:var(--sunny);transform:rotate(12deg);"></div>
+          <div class="sticker" id="story-sticker2"
+            style="bottom:-1rem;left:-1rem;background:var(--lilac);transform:rotate(-6deg);"></div>
         </div>
       </div>
-      <div class="cta-deco" style="top:0;left:0;width:18rem;height:18rem;background:rgba(255,255,255,0.1);transform:translate(-50%,-50%);"></div>
-      <div class="cta-deco" style="bottom:0;right:0;width:14rem;height:14rem;background:rgba(254,205,211,0.4);transform:translate(25%,25%);"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="container">
-    <p class="logo" id="footer-logo"></p>
-    <p class="tagline" id="footer-tagline"></p>
-    <div class="links" id="footer-links">
-      <!-- Filled by JS -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-img">
+            <img id="img-about-main" src="" alt="" width="1024" height="1024" loading="lazy">
+          </div>
+          <div class="sticker" id="about-sticker1"
+            style="top:-0.75rem;right:-0.75rem;background:var(--sunny);transform:rotate(6deg);"></div>
+          <div class="sticker" id="about-sticker2"
+            style="bottom:-0.75rem;left:-0.75rem;background:var(--lilac);transform:rotate(-3deg);"></div>
+        </div>
+        <div class="about-text">
+          <span class="about-badge" id="about-badge"></span>
+          <h2 class="text-balance" id="about-title"></h2>
+          <p class="about-sub" id="about-subtitle"></p>
+          <div id="about-paragraphs"></div>
+          <a href="#" id="about-link" target="_blank" rel="noopener noreferrer" class="story-link"></a>
+        </div>
+      </div>
     </div>
-    <p class="copy" id="footer-copy"></p>
+  </section>
+
+  <section id="order" class="order">
+    <div class="container">
+      <div class="order-header">
+        <h2 class="section-title" id="order-title"></h2>
+        <p class="section-desc" id="order-desc"></p>
+      </div>
+      <div class="order-grid" id="order-grid">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container" style="max-width:896px;">
+      <div class="cta-box">
+        <div style="position:relative;z-index:1;">
+          <h2 class="text-balance" id="cta-title"></h2>
+          <p id="cta-subtitle"></p>
+          <div class="cta-btns">
+            <a href="#" id="cta-wa-btn" target="_blank" rel="noopener noreferrer" class="btn-light"></a>
+            <a href="#" id="cta-ig-btn" target="_blank" rel="noopener noreferrer" class="btn-outline"></a>
+          </div>
+        </div>
+        <div class="cta-deco"
+          style="top:0;left:0;width:18rem;height:18rem;background:rgba(255,255,255,0.1);transform:translate(-50%,-50%);">
+        </div>
+        <div class="cta-deco"
+          style="bottom:0;right:0;width:14rem;height:14rem;background:rgba(254,205,211,0.4);transform:translate(25%,25%);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p class="logo" id="footer-logo"></p>
+      <p class="tagline" id="footer-tagline"></p>
+      <div class="links" id="footer-links">
+        <!-- Filled by JS -->
+      </div>
+      <p class="copy" id="footer-copy"></p>
+    </div>
+  </footer>
+
+  <div class="float-btns">
+    <a href="#" id="float-wa" target="_blank" rel="noopener noreferrer" aria-label="Order via WhatsApp"
+      class="float-btn" style="background:var(--whatsapp);">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+        <path
+          d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l.39.62-1.002 3.654 3.756-.985.835.45zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.297-.495.099-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01a1.09 1.09 0 0 0-.79.371c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" />
+      </svg>
+    </a>
+    <a href="#" id="float-ig" target="_blank" rel="noopener noreferrer" aria-label="DM on Instagram" class="float-btn"
+      style="background:linear-gradient(45deg,#f9ce34,#ee2a7b 50%,#6228d7);">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+      </svg>
+    </a>
   </div>
-</footer>
 
-<div class="float-btns">
-  <a href="#" id="float-wa" target="_blank" rel="noopener noreferrer" aria-label="Order via WhatsApp" class="float-btn" style="background:var(--whatsapp);">
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l.39.62-1.002 3.654 3.756-.985.835.45zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.297-.495.099-.198.05-.371-.025-.52-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01a1.09 1.09 0 0 0-.79.371c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
-  </a>
-  <a href="#" id="float-ig" target="_blank" rel="noopener noreferrer" aria-label="DM on Instagram" class="float-btn" style="background:linear-gradient(45deg,#f9ce34,#ee2a7b 50%,#6228d7);">
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-  </a>
-</div>
+  <script>
+    // ════════════════════════════════════════════
+    // CONFIG LOADER
+    // ════════════════════════════════════════════
+    const STORAGE_KEY = 'florela_admin_overrides';
 
-<script>
-// ════════════════════════════════════════════
-// CONFIG LOADER
-// ════════════════════════════════════════════
-const STORAGE_KEY = 'florela_admin_overrides';
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str || '';
+      return div.innerHTML;
+    }
 
-function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str || '';
-  return div.innerHTML;
-}
+    function getImageSrc(config, imageId) {
+      const img = config.images.find(i => i.id === imageId);
+      return img ? img.src : '';
+    }
 
-function getImageSrc(config, imageId) {
-  const img = config.images.find(i => i.id === imageId);
-  return img ? img.src : '';
-}
+    function getImageAlt(config, imageId) {
+      const img = config.images.find(i => i.id === imageId);
+      return img ? img.alt : '';
+    }
 
-function getImageAlt(config, imageId) {
-  const img = config.images.find(i => i.id === imageId);
-  return img ? img.alt : '';
-}
+    function getWhatsAppUrl(config) {
+      const msg = encodeURIComponent(config.siteSettings.whatsappMessage || '');
+      const num = config.siteSettings.whatsappNumber || '';
+      return `https://wa.me/${num}?text=${msg}`;
+    }
 
-function getWhatsAppUrl(config) {
-  const msg = encodeURIComponent(config.siteSettings.whatsappMessage || '');
-  const num = config.siteSettings.whatsappNumber || '';
-  return `https://wa.me/${num}?text=${msg}`;
-}
+    function loadOverrides(config) {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (!saved) return config;
+        const overrides = JSON.parse(saved);
 
-function loadOverrides(config) {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (!saved) return config;
-    const overrides = JSON.parse(saved);
-
-    // Apply image overrides
-    if (overrides.images) {
-      config.images.forEach(img => {
-        if (overrides.images[img.id]) {
-          if (overrides.images[img.id].src) img.src = overrides.images[img.id].src;
-          if (overrides.images[img.id].alt !== undefined) img.alt = overrides.images[img.id].alt;
+        // Apply image overrides
+        if (overrides.images) {
+          config.images.forEach(img => {
+            if (overrides.images[img.id]) {
+              if (overrides.images[img.id].src) img.src = overrides.images[img.id].src;
+              if (overrides.images[img.id].alt !== undefined) img.alt = overrides.images[img.id].alt;
+            }
+          });
         }
-      });
-    }
 
-    // Apply category overrides
-    if (overrides.categories) {
-      config.categories = overrides.categories;
-    }
+        // Apply category overrides
+        if (overrides.categories) {
+          config.categories = overrides.categories;
+        }
 
-    // Apply products overrides
-    if (overrides.products) {
-      config.products = overrides.products;
-    }
+        // Apply products overrides
+        if (overrides.products) {
+          config.products = overrides.products;
+        }
 
-    // Apply site settings overrides
-    if (overrides.siteSettings) {
-      Object.assign(config.siteSettings, overrides.siteSettings);
-    }
+        // Apply site settings overrides
+        if (overrides.siteSettings) {
+          Object.assign(config.siteSettings, overrides.siteSettings);
+        }
 
-    // Apply section overrides
-    ['heroSection', 'storySection', 'aboutSection', 'ctaSection', 'collectionSection', 'orderSectionHeader'].forEach(key => {
-      if (overrides[key]) {
-        Object.assign(config[key], overrides[key]);
+        // Apply section overrides
+        ['heroSection', 'storySection', 'aboutSection', 'ctaSection', 'collectionSection', 'orderSectionHeader'].forEach(key => {
+          if (overrides[key]) {
+            Object.assign(config[key], overrides[key]);
+          }
+        });
+
+        if (overrides.orderSteps) {
+          config.orderSteps = overrides.orderSteps;
+        }
+
+      } catch (e) {
+        console.warn('Could not load overrides:', e);
       }
-    });
-
-    if (overrides.orderSteps) {
-      config.orderSteps = overrides.orderSteps;
+      return config;
     }
 
-  } catch(e) {
-    console.warn('Could not load overrides:', e);
-  }
-  return config;
-}
+    async function init() {
+      try {
+        const resp = await fetch('site-config.json');
+        let config = await resp.json();
+        config = loadOverrides(config);
+        renderPage(config);
+      } catch (err) {
+        console.error('Failed to load config:', err);
+      }
+    }
 
-async function init() {
-  try {
-    const resp = await fetch('site-config.json');
-    let config = await resp.json();
-    config = loadOverrides(config);
-    renderPage(config);
-  } catch(err) {
-    console.error('Failed to load config:', err);
-  }
-}
+    function renderPage(c) {
+      const waUrl = getWhatsAppUrl(c);
+      const igUrl = c.siteSettings.instagramUrl;
+      const activeCategories = c.categories
+        .filter(cat => cat.active)
+        .sort((a, b) => a.sortOrder - b.sortOrder);
 
-function renderPage(c) {
-  const waUrl = getWhatsAppUrl(c);
-  const igUrl = c.siteSettings.instagramUrl;
-  const activeCategories = c.categories
-    .filter(cat => cat.active)
-    .sort((a, b) => a.sortOrder - b.sortOrder);
+      // ── Meta
+      document.title = c.siteSettings.metaTitle;
+      document.querySelector('meta[name="description"]').setAttribute('content', c.siteSettings.metaDescription);
 
-  // ── Meta
-  document.title = c.siteSettings.metaTitle;
-  document.querySelector('meta[name="description"]').setAttribute('content', c.siteSettings.metaDescription);
+      // ── Nav
+      document.getElementById('nav-logo').textContent = c.siteSettings.brandName;
+      document.getElementById('nav-order-btn').href = igUrl;
 
-  // ── Nav
-  document.getElementById('nav-logo').textContent = c.siteSettings.brandName;
-  document.getElementById('nav-order-btn').href = igUrl;
+      // ── Hero
+      document.getElementById('hero-badge').textContent = c.heroSection.badge;
+      document.getElementById('hero-title').innerHTML = `${escapeHtml(c.heroSection.titlePart1)}<span style="color:var(--rose-brand);font-style:italic;text-decoration:underline;text-decoration-style:wavy;text-decoration-color:var(--petal);text-underline-offset:4px;">${escapeHtml(c.heroSection.titleHighlight)}</span>${escapeHtml(c.heroSection.titlePart2)}`;
+      document.getElementById('hero-subtitle').textContent = c.heroSection.subtitle;
+      document.getElementById('hero-sticker').textContent = c.heroSection.stickerText;
 
-  // ── Hero
-  document.getElementById('hero-badge').textContent = c.heroSection.badge;
-  document.getElementById('hero-title').innerHTML = `${escapeHtml(c.heroSection.titlePart1)}<span style="color:var(--rose-brand);font-style:italic;text-decoration:underline;text-decoration-style:wavy;text-decoration-color:var(--petal);text-underline-offset:4px;">${escapeHtml(c.heroSection.titleHighlight)}</span>${escapeHtml(c.heroSection.titlePart2)}`;
-  document.getElementById('hero-subtitle').textContent = c.heroSection.subtitle;
-  document.getElementById('hero-sticker').textContent = c.heroSection.stickerText;
+      document.getElementById('hero-wa-btn').href = waUrl;
+      document.getElementById('hero-ig-btn').href = igUrl;
+      document.getElementById('hero-ig-btn').textContent = `Follow @${c.siteSettings.instagramHandle}`;
 
-  document.getElementById('hero-wa-btn').href = waUrl;
-  document.getElementById('hero-ig-btn').href = igUrl;
-  document.getElementById('hero-ig-btn').textContent = `Follow @${c.siteSettings.instagramHandle}`;
+      // Hero images
+      const heroMainImg = c.images.find(i => i.id === 'hero-main');
+      const heroSmallImg = c.images.find(i => i.id === 'hero-small');
+      if (heroMainImg) {
+        document.getElementById('img-hero-main').src = heroMainImg.src;
+        document.getElementById('img-hero-main').alt = heroMainImg.alt;
+      }
+      if (heroSmallImg) {
+        document.getElementById('img-hero-small').src = heroSmallImg.src;
+        document.getElementById('img-hero-small').alt = heroSmallImg.alt;
+      }
 
-  // Hero images
-  const heroMainImg = c.images.find(i => i.id === 'hero-main');
-  const heroSmallImg = c.images.find(i => i.id === 'hero-small');
-  if (heroMainImg) {
-    document.getElementById('img-hero-main').src = heroMainImg.src;
-    document.getElementById('img-hero-main').alt = heroMainImg.alt;
-  }
-  if (heroSmallImg) {
-    document.getElementById('img-hero-small').src = heroSmallImg.src;
-    document.getElementById('img-hero-small').alt = heroSmallImg.alt;
-  }
+      // ── Marquee
+      const marqueeItems = activeCategories.map(cat => cat.name);
+      let marqueeHtml = '';
+      // Duplicate for seamless scrolling
+      for (let i = 0; i < 2; i++) {
+        marqueeItems.forEach(name => {
+          marqueeHtml += `<span>${escapeHtml(name)}<span style="color:var(--rose-brand);">✿</span></span>`;
+        });
+      }
+      document.getElementById('marquee-inner').innerHTML = marqueeHtml;
 
-  // ── Marquee
-  const marqueeItems = activeCategories.map(cat => cat.name);
-  let marqueeHtml = '';
-  // Duplicate for seamless scrolling
-  for (let i = 0; i < 2; i++) {
-    marqueeItems.forEach(name => {
-      marqueeHtml += `<span>${escapeHtml(name)}<span style="color:var(--rose-brand);">✿</span></span>`;
-    });
-  }
-  document.getElementById('marquee-inner').innerHTML = marqueeHtml;
+      // ── Collection
+      document.getElementById('collection-label').textContent = c.collectionSection.label;
+      document.getElementById('collection-title').textContent = c.collectionSection.title;
+      document.getElementById('collection-desc').textContent = c.collectionSection.description;
 
-  // ── Collection
-  document.getElementById('collection-label').textContent = c.collectionSection.label;
-  document.getElementById('collection-title').textContent = c.collectionSection.title;
-  document.getElementById('collection-desc').textContent = c.collectionSection.description;
-
-  let gridHtml = '';
-  activeCategories.forEach((cat, idx) => {
-    const imgSrc = getImageSrc(c, cat.imageId);
-    const imgAlt = getImageAlt(c, cat.imageId);
-    const evenStyle = idx % 2 !== 0 ? ' style="margin-top:2.5rem;"' : '';
-    gridHtml += `
+      let gridHtml = '';
+      activeCategories.forEach((cat, idx) => {
+        const imgSrc = getImageSrc(c, cat.imageId);
+        const imgAlt = getImageAlt(c, cat.imageId);
+        const evenStyle = idx % 2 !== 0 ? ' style="margin-top:2.5rem;"' : '';
+        gridHtml += `
       <a href="category.html?cat=${cat.id}" class="cat-card"${evenStyle}>
         <div class="cat-img-wrap" style="background:${cat.bgColor};">
           <div class="cat-img-inner">
@@ -497,78 +1257,80 @@ function renderPage(c) {
         <p class="cat-sub">${escapeHtml(cat.subtitle)}</p>
       </a>
     `;
-  });
-  document.getElementById('collection-grid').innerHTML = gridHtml;
+      });
+      document.getElementById('collection-grid').innerHTML = gridHtml;
 
-  // ── Story
-  const storyImg = c.images.find(i => i.id === 'story-main');
-  document.getElementById('story-badge').textContent = c.storySection.badge;
-  document.getElementById('story-title').textContent = c.storySection.title;
-  document.getElementById('story-paragraphs').innerHTML = c.storySection.paragraphs.map(p => `<p class="text-pretty">${escapeHtml(p)}</p>`).join('');
-  document.getElementById('story-link').textContent = c.storySection.linkText;
-  document.getElementById('story-link').href = igUrl;
-  document.getElementById('story-sticker1').textContent = c.storySection.sticker1;
-  document.getElementById('story-sticker2').textContent = c.storySection.sticker2;
-  if (storyImg) {
-    document.getElementById('img-story-main').src = storyImg.src;
-    document.getElementById('img-story-main').alt = storyImg.alt;
-  }
+      // ── Story
+      const storyImg = c.images.find(i => i.id === 'story-main');
+      document.getElementById('story-badge').textContent = c.storySection.badge;
+      document.getElementById('story-title').textContent = c.storySection.title;
+      document.getElementById('story-paragraphs').innerHTML = c.storySection.paragraphs.map(p => `<p class="text-pretty">${escapeHtml(p)}</p>`).join('');
+      document.getElementById('story-link').textContent = c.storySection.linkText;
+      document.getElementById('story-link').href = igUrl;
+      document.getElementById('story-sticker1').textContent = c.storySection.sticker1;
+      document.getElementById('story-sticker2').textContent = c.storySection.sticker2;
+      if (storyImg) {
+        document.getElementById('img-story-main').src = storyImg.src;
+        document.getElementById('img-story-main').alt = storyImg.alt;
+      }
 
-  // ── About
-  const aboutImg = c.images.find(i => i.id === 'about-main');
-  document.getElementById('about-badge').textContent = c.aboutSection.badge;
-  document.getElementById('about-title').textContent = c.aboutSection.title;
-  document.getElementById('about-subtitle').textContent = c.aboutSection.subtitle;
-  document.getElementById('about-paragraphs').innerHTML = c.aboutSection.paragraphs.map(p => `<p class="text-pretty">${escapeHtml(p)}</p>`).join('');
-  document.getElementById('about-link').textContent = c.aboutSection.linkText;
-  document.getElementById('about-link').href = igUrl;
-  document.getElementById('about-sticker1').textContent = c.aboutSection.sticker1;
-  document.getElementById('about-sticker2').textContent = c.aboutSection.sticker2;
-  if (aboutImg) {
-    document.getElementById('img-about-main').src = aboutImg.src;
-    document.getElementById('img-about-main').alt = aboutImg.alt;
-  }
+      // ── About
+      const aboutImg = c.images.find(i => i.id === 'about-main');
+      document.getElementById('about-badge').textContent = c.aboutSection.badge;
+      document.getElementById('about-title').textContent = c.aboutSection.title;
+      document.getElementById('about-subtitle').textContent = c.aboutSection.subtitle;
+      document.getElementById('about-paragraphs').innerHTML = c.aboutSection.paragraphs.map(p => `<p class="text-pretty">${escapeHtml(p)}</p>`).join('');
+      document.getElementById('about-link').textContent = c.aboutSection.linkText;
+      document.getElementById('about-link').href = igUrl;
+      document.getElementById('about-sticker1').textContent = c.aboutSection.sticker1;
+      document.getElementById('about-sticker2').textContent = c.aboutSection.sticker2;
+      if (aboutImg) {
+        document.getElementById('img-about-main').src = aboutImg.src;
+        document.getElementById('img-about-main').alt = aboutImg.alt;
+      }
 
-  // ── Order steps
-  document.getElementById('order-title').innerHTML = escapeHtml(c.orderSectionHeader.title);
-  document.getElementById('order-desc').textContent = c.orderSectionHeader.description;
-  let stepsHtml = '';
-  c.orderSteps.forEach(step => {
-    stepsHtml += `
+      // ── Order steps
+      document.getElementById('order-title').innerHTML = escapeHtml(c.orderSectionHeader.title);
+      document.getElementById('order-desc').textContent = c.orderSectionHeader.description;
+      let stepsHtml = '';
+      c.orderSteps.forEach(step => {
+        stepsHtml += `
       <div class="order-card" style="background:${step.bgColor};">
         <div class="order-step">${escapeHtml(step.step)}</div>
         <h3>${escapeHtml(step.title)}</h3>
         <p>${escapeHtml(step.description)}</p>
       </div>
     `;
-  });
-  document.getElementById('order-grid').innerHTML = stepsHtml;
+      });
+      document.getElementById('order-grid').innerHTML = stepsHtml;
 
-  // ── CTA
-  document.getElementById('cta-title').textContent = c.ctaSection.title;
-  document.getElementById('cta-subtitle').textContent = c.ctaSection.subtitle;
-  document.getElementById('cta-wa-btn').href = waUrl;
-  document.getElementById('cta-wa-btn').textContent = c.ctaSection.whatsappBtnText;
-  document.getElementById('cta-ig-btn').href = igUrl;
-  document.getElementById('cta-ig-btn').textContent = c.ctaSection.instagramBtnText;
+      // ── CTA
+      document.getElementById('cta-title').textContent = c.ctaSection.title;
+      document.getElementById('cta-subtitle').textContent = c.ctaSection.subtitle;
+      document.getElementById('cta-wa-btn').href = waUrl;
+      document.getElementById('cta-wa-btn').textContent = c.ctaSection.whatsappBtnText;
+      document.getElementById('cta-ig-btn').href = igUrl;
+      document.getElementById('cta-ig-btn').textContent = c.ctaSection.instagramBtnText;
 
-  // ── Footer
-  document.getElementById('footer-logo').textContent = c.siteSettings.brandName;
-  document.getElementById('footer-tagline').textContent = c.siteSettings.tagline;
-  document.getElementById('footer-copy').textContent = c.siteSettings.copyrightText;
-  document.getElementById('footer-links').innerHTML = `
+      // ── Footer
+      document.getElementById('footer-logo').textContent = c.siteSettings.brandName;
+      document.getElementById('footer-tagline').textContent = c.siteSettings.tagline;
+      document.getElementById('footer-copy').textContent = c.siteSettings.copyrightText;
+      document.getElementById('footer-links').innerHTML = `
     <a href="${igUrl}" target="_blank" rel="noopener noreferrer">Instagram</a>
     <a href="${waUrl}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
     <a href="#collection">Catalog</a>
   `;
 
-  // ── Float buttons
-  document.getElementById('float-wa').href = waUrl;
-  document.getElementById('float-ig').href = igUrl;
-}
+      // ── Float buttons
+      document.getElementById('float-wa').href = waUrl;
+      document.getElementById('float-ig').href = igUrl;
+    }
 
-init();
-</script>
+    init();
+  </script>
+  <script src="https://devaichatbot.efasttrade.com/iframe/agent-loader.v1.js" data-web-id="36"></script>
 
 </body>
+
 </html>
