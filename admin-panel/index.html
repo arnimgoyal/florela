@@ -563,6 +563,10 @@ body::after { content: ''; position: fixed; bottom: -30%; left: -10%; width: 500
         <input type="text" class="form-input" id="prod-name-input" placeholder="e.g. Sunset Rose Bouquet">
       </div>
       <div class="form-group">
+        <label class="form-label">Price</label>
+        <input type="text" class="form-input" id="prod-price-input" placeholder="e.g. $25">
+      </div>
+      <div class="form-group">
         <label class="form-label">Description</label>
         <textarea class="form-input form-textarea" id="prod-desc-input" placeholder="A warm-toned bouquet with hand-twisted roses..."></textarea>
       </div>
@@ -1233,6 +1237,7 @@ function renderProducts() {
           </div>
           <div class="manage-card-info">
             <div class="manage-card-meta">Category: ${escapeHtml(catName)} · ID: ${prod.id}</div>
+            <div class="manage-card-meta">Price: Rs. ${escapeHtml(prod.price || 'N/A')}</div>
             <div class="manage-card-desc">${escapeHtml(prod.description)}</div>
           </div>
         </div>
@@ -1267,6 +1272,7 @@ function openProductModal(prodId) {
   if (isEdit) {
     const prod = config.products.find(p => p.id === prodId);
     document.getElementById('prod-name-input').value = prod.name;
+    document.getElementById('prod-price-input').value = prod.price || '';
     document.getElementById('prod-desc-input').value = prod.description;
     document.getElementById('prod-alt-input').value = prod.imageAlt;
     document.getElementById('prod-active-input').checked = prod.active;
@@ -1276,6 +1282,7 @@ function openProductModal(prodId) {
     preview.style.display = 'block';
   } else {
     document.getElementById('prod-name-input').value = '';
+    document.getElementById('prod-price-input').value = '';
     document.getElementById('prod-desc-input').value = '';
     document.getElementById('prod-alt-input').value = '';
     document.getElementById('prod-active-input').checked = true;
@@ -1348,6 +1355,7 @@ async function saveProductModal() {
 
   const data = {
     name,
+    price: document.getElementById('prod-price-input').value.trim(),
     description: document.getElementById('prod-desc-input').value.trim(),
     categoryId: document.getElementById('prod-category-select').value,
     imageAlt: document.getElementById('prod-alt-input').value.trim(),

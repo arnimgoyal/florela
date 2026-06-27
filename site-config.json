@@ -196,6 +196,86 @@
       "imageAlt": "The Clover Classic",
       "active": true,
       "image": "images/20260615_184414.jpg"
+    },
+    {
+      "id": "prod-kc-01",
+      "name": "Magical Lily Charm",
+      "description": "Magical Lily keychain",
+      "categoryId": "keychains",
+      "imageAlt": "Keychain 1",
+      "active": true,
+      "image": "images/keychains/20260618_162036.jpg",
+      "price": "50"
+    },
+    {
+      "id": "prod-kc-02",
+      "name": "Daisydelle Charm",
+      "description": "",
+      "categoryId": "keychains",
+      "imageAlt": "Keychain 2",
+      "active": true,
+      "image": "images/keychains/IMG_7714.jpg",
+      "price": "50"
+    },
+    {
+      "id": "prod-kc-03",
+      "name": "Strawberry Charm",
+      "description": "Strawberry Charm",
+      "categoryId": "keychains",
+      "imageAlt": "Strawberry Charm",
+      "active": true,
+      "image": "images/IMG_7757.jpg",
+      "price": "40"
+    },
+    {
+      "id": "prod-kc-04",
+      "name": "Rosette Glow Charm",
+      "description": "Rosette Glow Charm",
+      "categoryId": "keychains",
+      "imageAlt": "Rosette Glow Charm",
+      "active": true,
+      "image": "images/keychains/IMG_7729.jpg",
+      "price": "50"
+    },
+    {
+      "id": "prod-kc-05",
+      "name": "Evil Eye Charm",
+      "description": "Evil Eye Charm",
+      "categoryId": "keychains",
+      "imageAlt": "Evil Eye Charm",
+      "active": true,
+      "image": "images/keychains/IMG_7732.jpg",
+      "price": "50"
+    },
+    {
+      "id": "prod-kc-06",
+      "name": "Bow Charm",
+      "description": "",
+      "categoryId": "keychains",
+      "imageAlt": "Keychain 6",
+      "active": true,
+      "image": "images/keychains/IMG_7742.jpg",
+      "price": "35"
+    },
+    {
+      "id": "prod-kc-07",
+      "name": "Sunbloom Charm",
+      "description": "Sunbloom Charm",
+      "categoryId": "keychains",
+      "imageAlt": "Sunbloom Charm",
+      "active": true,
+      "image": "images/keychains/IMG_7748.jpg",
+      "price": "50"
+    },
+    {
+      "id": "prod-kc-08",
+      "name": "Lotus Charm",
+      "description": "Lotus Charm",
+      "categoryId": "keychains",
+      "imageAlt": "Lotus Charm",
+      "active": true,
+      "image": "images/keychains/IMG_7767.jpg",
+      "price": "60"
     }
   ],
   "images": [

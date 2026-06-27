@@ -468,6 +468,7 @@ function renderPage(c, category) {
           </div>
           <div class="product-card-body">
             <h3 class="product-card-name">${escapeHtml(prod.name)}</h3>
+            ${prod.price ? `<p class="product-card-price" style="font-weight: 600; color: var(--ink); margin-bottom: 0.25rem;">Rs. ${escapeHtml(prod.price)}</p>` : ''}
             <p class="product-card-desc">${escapeHtml(prod.description)}</p>
             <a href="${igUrl}" target="_blank" rel="noopener noreferrer" class="product-card-order">
               Order now
