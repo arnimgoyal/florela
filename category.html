@@ -611,7 +611,6 @@ function enableDragScroll(track) {
 
   track.addEventListener('mousedown', (e) => {
     isDown = true;
-    track.classList.add('is-dragging');
     startX = e.pageX - track.offsetLeft;
     scrollLeft = track.scrollLeft;
   });
@@ -628,6 +627,9 @@ function enableDragScroll(track) {
     e.preventDefault();
     const x = e.pageX - track.offsetLeft;
     const walk = (x - startX) * 1.5;
+    if (Math.abs(walk) > 5) {
+      track.classList.add('is-dragging');
+    }
     track.scrollLeft = scrollLeft - walk;
   });
 }
