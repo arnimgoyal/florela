@@ -79,40 +79,13 @@
   },
   "categories": [
     {
-      "id": "classics",
-      "name": "The Florela Classic",
-      "subtitle": "Classics",
-      "imageId": "cat-classics",
-      "bgColor": "#ecfccb",
-      "active": true,
-      "sortOrder": 1
-    },
-    {
-      "id": "bouquets",
-      "name": "Bouquets",
-      "subtitle": "Handcrafted bundles",
-      "imageId": "cat-bouquets",
-      "bgColor": "#d9f99d",
-      "active": true,
-      "sortOrder": 1.5
-    },
-    {
-      "id": "flowers",
-      "name": "Flowers",
-      "subtitle": "Single fuzzy stems",
-      "imageId": "cat-wild-flowers",
-      "bgColor": "#fce7f3",
-      "active": false,
-      "sortOrder": 2
-    },
-    {
       "id": "desk-decor",
       "name": "Desk Decor",
       "subtitle": "Wiggly desk friends",
       "imageId": "cat-desk-decor",
       "bgColor": "#ede9fe",
       "active": true,
-      "sortOrder": 3
+      "sortOrder": 1
     },
     {
       "id": "keychains",
@@ -121,7 +94,61 @@
       "imageId": "cat-keychains",
       "bgColor": "#fef3c7",
       "active": true,
+      "sortOrder": 2
+    },
+    {
+      "id": "hair-accessories",
+      "name": "Hair Accessories",
+      "subtitle": "Bloom in your hair",
+      "imageId": "cat-hair-accessories",
+      "bgColor": "#fce7f3",
+      "active": true,
+      "sortOrder": 3
+    },
+    {
+      "id": "mirrors",
+      "name": "Mirrors",
+      "subtitle": "Aesthetic reflections",
+      "imageId": "cat-mirrors",
+      "bgColor": "#e0e7ff",
+      "active": true,
       "sortOrder": 4
+    },
+    {
+      "id": "diy-kits",
+      "name": "DIY Kits",
+      "subtitle": "Craft your own creations",
+      "imageId": "cat-diy-kits",
+      "bgColor": "#ccfbf1",
+      "active": true,
+      "sortOrder": 5
+    },
+    {
+      "id": "classics",
+      "name": "The Florela Classic",
+      "subtitle": "Timeless favourites",
+      "imageId": "cat-classics",
+      "bgColor": "#ecfccb",
+      "active": true,
+      "sortOrder": 6
+    },
+    {
+      "id": "bouquets",
+      "name": "Bouquets",
+      "subtitle": "Handcrafted bundles",
+      "imageId": "cat-bouquets",
+      "bgColor": "#d9f99d",
+      "active": true,
+      "sortOrder": 7
+    },
+    {
+      "id": "flowers",
+      "name": "Flowers",
+      "subtitle": "Single fuzzy stems",
+      "imageId": "cat-wild-flowers",
+      "bgColor": "#fce7f3",
+      "active": false,
+      "sortOrder": 8
     },
     {
       "id": "dancing-flowers",
@@ -130,7 +157,7 @@
       "imageId": "cat-dancing-flowers",
       "bgColor": "#ede9fe",
       "active": false,
-      "sortOrder": 5
+      "sortOrder": 9
     },
     {
       "id": "dreamy-lamps",
@@ -139,7 +166,7 @@
       "imageId": "cat-dreamy-lamps",
       "bgColor": "#fef3c7",
       "active": false,
-      "sortOrder": 6
+      "sortOrder": 10
     },
     {
       "id": "bag-charms",
@@ -148,7 +175,7 @@
       "imageId": "cat-bag-charms",
       "bgColor": "#ecfccb",
       "active": false,
-      "sortOrder": 7
+      "sortOrder": 11
     },
     {
       "id": "curtain-holders",
@@ -157,7 +184,7 @@
       "imageId": "cat-curtain-holders",
       "bgColor": "#ede9fe",
       "active": false,
-      "sortOrder": 8
+      "sortOrder": 12
     },
     {
       "id": "bento-box",
@@ -166,7 +193,7 @@
       "imageId": "cat-bento-box",
       "bgColor": "#fce7f3",
       "active": false,
-      "sortOrder": 9
+      "sortOrder": 13
     }
   ],
   "products": [
@@ -332,6 +359,24 @@
       "image": "images/bouquets/Tulip and Lily Bouquet.jpeg"
     },
     {
+      "id": "prod-dd-07",
+      "name": "Purple Herbs Pot",
+      "description": "A lovely handcrafted purple herbs pot — a touch of nature for your desk.",
+      "categoryId": "desk-decor",
+      "imageAlt": "Purple Herbs Pot",
+      "active": true,
+      "image": "images/desk-decor/Purple herbs pot.jpeg"
+    },
+    {
+      "id": "prod-dd-04",
+      "name": "Sunflower Desk Decor",
+      "description": "A cheerful sunflower desk piece crafted from soft fuzzy wire.",
+      "categoryId": "desk-decor",
+      "imageAlt": "Sunflower Desk Decor",
+      "active": true,
+      "image": "images/desk-decor/Sunflower Desk Decor.jpeg"
+    },
+    {
       "id": "prod-dd-01",
       "name": "Cactus Desk Decor",
       "description": "A cute handmade cactus desk companion that never needs watering.",
@@ -359,15 +404,6 @@
       "image": "images/desk-decor/Sunflower Dancing Flower.jpeg"
     },
     {
-      "id": "prod-dd-04",
-      "name": "Sunflower Desk Decor",
-      "description": "A cheerful sunflower desk piece crafted from soft fuzzy wire.",
-      "categoryId": "desk-decor",
-      "imageAlt": "Sunflower Desk Decor",
-      "active": true,
-      "image": "images/desk-decor/Sunflower Desk Decor.jpeg"
-    },
-    {
       "id": "prod-dd-05",
       "name": "Tulip Desk Decor",
       "description": "A delicate handmade tulip to add a touch of colour to your workspace.",
@@ -375,6 +411,211 @@
       "imageAlt": "Tulip Desk Decor",
       "active": true,
       "image": "images/desk-decor/Tulip Desk Decor.jpeg"
+    },
+    {
+      "id": "prod-dd-06",
+      "name": "Daisies Desk Decor",
+      "description": "A cheerful bunch of handmade daisies to brighten up your workspace.",
+      "categoryId": "desk-decor",
+      "imageAlt": "Daisies Desk Decor",
+      "active": true,
+      "image": "images/desk-decor/daisies desk decor.jpeg"
+    },
+    {
+      "id": "prod-dd-08",
+      "name": "Purple Herbs Desk Decor",
+      "description": "Delicate purple herbs desk decor, handcrafted from fuzzy pipe cleaners.",
+      "categoryId": "desk-decor",
+      "imageAlt": "Purple Herbs Desk Decor",
+      "active": true,
+      "image": "images/desk-decor/purple herbs Desk decor.jpeg"
+    },
+    {
+      "id": "prod-kc-09",
+      "name": "Hello Kitty Keychain",
+      "description": "An adorable Hello Kitty keychain, handcrafted from fuzzy pipe cleaners.",
+      "categoryId": "keychains",
+      "imageAlt": "Hello Kitty Keychain",
+      "active": true,
+      "image": "images/keychains/Hello Kitty keychain.jpeg",
+      "price": "50"
+    },
+    {
+      "id": "prod-kc-10",
+      "name": "Ribbon Keychain",
+      "description": "A cute ribbon keychain twisted from soft pipe cleaners.",
+      "categoryId": "keychains",
+      "imageAlt": "Ribbon Keychain",
+      "active": true,
+      "image": "images/keychains/Ribbon Keychain.jpeg",
+      "price": "40"
+    },
+    {
+      "id": "prod-kc-11",
+      "name": "Spider Keychain",
+      "description": "A quirky spider keychain — handcrafted with fuzzy pipe cleaner magic.",
+      "categoryId": "keychains",
+      "imageAlt": "Spider Keychain",
+      "active": true,
+      "image": "images/keychains/Spider Keychain.jpeg",
+      "price": "45"
+    },
+    {
+      "id": "prod-kc-12",
+      "name": "Blue Octopus Keychain",
+      "description": "A charming blue octopus keychain, handmade from fuzzy wire.",
+      "categoryId": "keychains",
+      "imageAlt": "Blue Octopus Keychain",
+      "active": true,
+      "image": "images/keychains/blue octopus keychain.jpeg",
+      "price": "50"
+    },
+    {
+      "id": "prod-kc-13",
+      "name": "Butterfly Keychain",
+      "description": "A beautiful butterfly keychain crafted from colourful pipe cleaners.",
+      "categoryId": "keychains",
+      "imageAlt": "Butterfly Keychain",
+      "active": true,
+      "image": "images/keychains/butterfly keychain .jpeg",
+      "price": "50"
+    },
+    {
+      "id": "prod-kc-14",
+      "name": "Strawberry Bag Charm",
+      "description": "A sweet strawberry bag charm, hand-twisted from fuzzy wire.",
+      "categoryId": "keychains",
+      "imageAlt": "Strawberry Bag Charm",
+      "active": true,
+      "image": "images/keychains/IMG_7719.jpg",
+      "price": "50"
+    },
+    {
+      "id": "prod-kc-15",
+      "name": "Keychain Collection",
+      "description": "A curated collection of our favourite pipe cleaner keychains.",
+      "categoryId": "keychains",
+      "imageAlt": "Keychain Collection",
+      "active": true,
+      "image": "images/keychains/all 1.jpeg",
+      "price": ""
+    },
+    {
+      "id": "prod-ha-01",
+      "name": "Butterfly Hair Clip",
+      "description": "A delicate butterfly hair clip, handcrafted from colourful pipe cleaners.",
+      "categoryId": "hair-accessories",
+      "imageAlt": "Butterfly Hair Clip",
+      "active": true,
+      "image": "images/Hair-Accessories/Butterfly hair clip.jpeg"
+    },
+    {
+      "id": "prod-ha-02",
+      "name": "Flower Hair Band",
+      "description": "A beautiful flower hair band twisted from soft fuzzy wire.",
+      "categoryId": "hair-accessories",
+      "imageAlt": "Flower Hair Band",
+      "active": true,
+      "image": "images/Hair-Accessories/Flower hair band.jpeg"
+    },
+    {
+      "id": "prod-ha-03",
+      "name": "HeadBands",
+      "description": "Handcrafted pipe cleaner headbands — fun and fashionable.",
+      "categoryId": "hair-accessories",
+      "imageAlt": "HeadBands",
+      "active": true,
+      "image": "images/Hair-Accessories/HeadBands.jpeg"
+    },
+    {
+      "id": "prod-ha-04",
+      "name": "Pink Flower Hair Clip",
+      "description": "A pretty pink flower hair clip, hand-twisted with love.",
+      "categoryId": "hair-accessories",
+      "imageAlt": "Pink Flower Hair Clip",
+      "active": true,
+      "image": "images/Hair-Accessories/Pink Flower Hair Clip.jpeg"
+    },
+    {
+      "id": "prod-ha-05",
+      "name": "Pipe Cleaner Headband \ud83c\udf38",
+      "description": "A whimsical floral headband crafted entirely from pipe cleaners.",
+      "categoryId": "hair-accessories",
+      "imageAlt": "Pipe Cleaner Headband",
+      "active": true,
+      "image": "images/Hair-Accessories/Pipe Cleaner HEADBAND \ud83c\udf38.jpeg"
+    },
+    {
+      "id": "prod-ha-06",
+      "name": "Tiara",
+      "description": "A stunning handmade tiara — feel like royalty with fuzzy pipe cleaner art.",
+      "categoryId": "hair-accessories",
+      "imageAlt": "Tiara",
+      "active": true,
+      "image": "images/Hair-Accessories/Tiara.jpeg"
+    },
+    {
+      "id": "prod-mr-01",
+      "name": "Aesthetic Mirror 1",
+      "description": "A beautifully decorated aesthetic mirror with pipe cleaner floral accents.",
+      "categoryId": "mirrors",
+      "imageAlt": "Aesthetic Mirror",
+      "active": true,
+      "image": "images/Mirrors/Aesthetic mirror 1.jpeg"
+    },
+    {
+      "id": "prod-mr-02",
+      "name": "Aesthetic Mirror 2",
+      "description": "An elegant aesthetic mirror adorned with handcrafted pipe cleaner flowers.",
+      "categoryId": "mirrors",
+      "imageAlt": "Aesthetic Mirror",
+      "active": true,
+      "image": "images/Mirrors/Aesthetic mirror 2.jpeg"
+    },
+    {
+      "id": "prod-diy-01",
+      "name": "Crimson Lily Bouquet DIY Kit",
+      "description": "Craft your own beautiful crimson lily bouquet with this complete DIY kit.",
+      "categoryId": "diy-kits",
+      "imageAlt": "Crimson Lily Bouquet DIY",
+      "active": true,
+      "image": "images/DIY KITS/Crimson Lily Bouquet DIY.webp"
+    },
+    {
+      "id": "prod-diy-02",
+      "name": "Dancing Flower DIY Kit",
+      "description": "Everything you need to create your own wiggly dancing flower.",
+      "categoryId": "diy-kits",
+      "imageAlt": "Dancing Flower DIY KIT",
+      "active": true,
+      "image": "images/DIY KITS/Dancing Flower DIY KIT.webp"
+    },
+    {
+      "id": "prod-diy-03",
+      "name": "Lamp DIY Kit",
+      "description": "Build your own dreamy pipe cleaner lamp with our guided kit.",
+      "categoryId": "diy-kits",
+      "imageAlt": "Lamp DIY Kit",
+      "active": true,
+      "image": "images/DIY KITS/Lamp DIY Kit.webp"
+    },
+    {
+      "id": "prod-diy-04",
+      "name": "Purple Lily Bouquet DIY Kit",
+      "description": "Create a stunning purple lily bouquet from scratch with this kit.",
+      "categoryId": "diy-kits",
+      "imageAlt": "Purple Lily Bouquet DIY",
+      "active": true,
+      "image": "images/DIY KITS/Puple Lily Bouquet DIY.webp"
+    },
+    {
+      "id": "prod-diy-05",
+      "name": "Sunflower Bouquet DIY Kit",
+      "description": "A sunny DIY project — craft your own vibrant sunflower bouquet.",
+      "categoryId": "diy-kits",
+      "imageAlt": "Sunflower Bouquet DIY Kit",
+      "active": true,
+      "image": "images/DIY KITS/sunflower bouquet DIY Kit.webp"
     }
   ],
   "images": [
