@@ -133,6 +133,15 @@
       "sortOrder": 6
     },
     {
+      "id": "floral-cutlery",
+      "name": "Floral Cutlery",
+      "subtitle": "Dine with flowers",
+      "imageId": "cat-floral-cutlery",
+      "bgColor": "#fef3c7",
+      "active": true,
+      "sortOrder": 6
+    },
+    {
       "id": "bouquets",
       "name": "Bouquets",
       "subtitle": "Handcrafted bundles",
@@ -361,7 +370,7 @@
     {
       "id": "prod-dd-07",
       "name": "Purple Herbs Pot",
-      "description": "A lovely handcrafted purple herbs pot — a touch of nature for your desk.",
+      "description": "A lovely handcrafted purple herbs pot \u2014 a touch of nature for your desk.",
       "categoryId": "desk-decor",
       "imageAlt": "Purple Herbs Pot",
       "active": true,
@@ -453,7 +462,7 @@
     {
       "id": "prod-kc-11",
       "name": "Spider Keychain",
-      "description": "A quirky spider keychain — handcrafted with fuzzy pipe cleaner magic.",
+      "description": "A quirky spider keychain \u2014 handcrafted with fuzzy pipe cleaner magic.",
       "categoryId": "keychains",
       "imageAlt": "Spider Keychain",
       "active": true,
@@ -521,7 +530,7 @@
     {
       "id": "prod-ha-03",
       "name": "HeadBands",
-      "description": "Handcrafted pipe cleaner headbands — fun and fashionable.",
+      "description": "Handcrafted pipe cleaner headbands \u2014 fun and fashionable.",
       "categoryId": "hair-accessories",
       "imageAlt": "HeadBands",
       "active": true,
@@ -548,7 +557,7 @@
     {
       "id": "prod-ha-06",
       "name": "Tiara",
-      "description": "A stunning handmade tiara — feel like royalty with fuzzy pipe cleaner art.",
+      "description": "A stunning handmade tiara \u2014 feel like royalty with fuzzy pipe cleaner art.",
       "categoryId": "hair-accessories",
       "imageAlt": "Tiara",
       "active": true,
@@ -611,11 +620,38 @@
     {
       "id": "prod-diy-05",
       "name": "Sunflower Bouquet DIY Kit",
-      "description": "A sunny DIY project — craft your own vibrant sunflower bouquet.",
+      "description": "A sunny DIY project \u2014 craft your own vibrant sunflower bouquet.",
       "categoryId": "diy-kits",
       "imageAlt": "Sunflower Bouquet DIY Kit",
       "active": true,
       "image": "images/DIY KITS/sunflower bouquet DIY Kit.webp"
+    },
+    {
+      "id": "prod-fc-01",
+      "name": "Small Daisies Cutlery Holder",
+      "description": "A beautiful handmade daisies cutlery holder.",
+      "categoryId": "floral-cutlery",
+      "imageAlt": "Small Daisies Cutlery Holder",
+      "active": true,
+      "image": "images/Floral Cutlery/Small daisies cutlery holder.jpeg"
+    },
+    {
+      "id": "prod-fc-02",
+      "name": "Purple Lily Cutlery Holder",
+      "description": "An elegant purple lily cutlery holder.",
+      "categoryId": "floral-cutlery",
+      "imageAlt": "Purple Lily Cutlery Holder",
+      "active": true,
+      "image": "images/Floral Cutlery/Purple Lily Cutlery Holder.jpeg"
+    },
+    {
+      "id": "prod-fc-03",
+      "name": "Tulip Cutlery Holder",
+      "description": "A bright and cheerful tulip cutlery holder.",
+      "categoryId": "floral-cutlery",
+      "imageAlt": "Tulip Cutlery Holder",
+      "active": true,
+      "image": "images/Floral Cutlery/Tulip Cutlery Holder.jpeg"
     }
   ],
   "images": [
@@ -739,6 +775,34 @@
       "label": "Classics",
       "src": "images/classics/20260615_184808.jpg",
       "alt": "Classics category"
+    },
+    {
+      "id": "cat-hair-accessories",
+      "section": "Collection",
+      "label": "Hair Accessories",
+      "src": "images/Hair-Accessories/Tiara.jpeg",
+      "alt": "Hair Accessories category"
+    },
+    {
+      "id": "cat-mirrors",
+      "section": "Collection",
+      "label": "Mirrors",
+      "src": "images/Mirrors/Aesthetic mirror 1.jpeg",
+      "alt": "Mirrors category"
+    },
+    {
+      "id": "cat-diy-kits",
+      "section": "Collection",
+      "label": "DIY Kits",
+      "src": "images/DIY KITS/sunflower bouquet DIY Kit.webp",
+      "alt": "DIY Kits category"
+    },
+    {
+      "id": "cat-floral-cutlery",
+      "section": "Collection",
+      "label": "Floral Cutlery",
+      "src": "images/Floral Cutlery/Tulip Cutlery Holder.jpeg",
+      "alt": "Floral Cutlery category"
     }
   ]
 }
